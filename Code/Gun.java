@@ -15,9 +15,6 @@ public class Gun {
     /** name of the gun */
     private String name;
 
-    /** if the gun is a sidearm */
-    private boolean sidearm;
-
     /** cost of the gun */
     private int cost;
 
@@ -49,7 +46,6 @@ public class Gun {
      * Constructor
      * 
      * @param name        name of the gun
-     * @param sidearm     if the gun is a sidearm
      * @param cost        cost of the gun
      * @param automatic   firemode of the gun
      * @param reloadSpeed time it takes for reload
@@ -60,11 +56,10 @@ public class Gun {
      * @param bodyDmg     dmg of a bodyshot
      * @param legDmg      dmg of legshot
      */
-    public Gun(String name, boolean sidearm, int cost, boolean automatic, double reloadSpeed, int magazine,
+    public Gun(String name, int cost, boolean automatic, double reloadSpeed, int magazine,
             int reserve, double fireRate, int headDmg, int bodyDmg, int legDmg) {
 
         this.name = name;
-        this.sidearm = sidearm;
         this.cost = cost;
         this.automatic = automatic;
         this.reloadSpeed = reloadSpeed;
@@ -79,10 +74,6 @@ public class Gun {
     /*
      * Accessors
      */
-
-    public boolean getSidearm() {
-        return this.sidearm;
-    }
 
     public int getCost() {
         return this.cost;
@@ -110,7 +101,6 @@ public class Gun {
         String gunString = "";
 
         gunString = gunString + "Name: " + this.name + "\n";
-        gunString = gunString + "Sidearm: " + this.sidearm + "\n";
         gunString = gunString + "Cost: $" + this.cost + "\n";
         gunString = gunString + "Automatic: " + this.automatic + "\n";
         gunString = gunString + "Reload Speed: " + this.reloadSpeed + "s\n";
