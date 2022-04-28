@@ -47,7 +47,7 @@ public class Abilities {
 	 * @param slow: 		if it slows
 	 * @param concuss: 		if it concusses
 	 * @param decay: 		if it decays
-	 * @param vulnerable: 	if it can make enemies vulnerable
+	 * @param vulnerable: 	        if it can make enemies vulnerable
 	 * @param detect: 		if it can detects enemies
 	 */
 	public Ability(String name, int cost, int damage, boolean blind, boolean slow, boolean concuss, boolean decay, boolean vulnerable, boolean detect) { 
