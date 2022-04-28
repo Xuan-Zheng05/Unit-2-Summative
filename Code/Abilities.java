@@ -64,7 +64,7 @@ public class Abilities {
         
     }
 	
-	 /*
+    /*
      * Methods
      */
 	
@@ -75,7 +75,7 @@ public class Abilities {
 	 */
 	public String toString() {
 		
-		String abilityString = "";
+	    String abilityString = "";
 		
 	    abilityString = abilityString + "Name: " + this.name + "\n";
 	    abilityString = abilityString + "Cost: $" + this.cost + "\n";
