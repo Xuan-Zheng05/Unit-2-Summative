@@ -12,8 +12,8 @@ import java.io.*;
 
 public class GunMain {
     public static void main(String[] args) throws IOException {
-        Gun Vandal = new Gun("Vandal", false, 2900, true, 2.5, 25, 75, 9.75, 160, 40, 34);
+        Gun vandal = new Gun("Vandal", false, 2900, true, 2.5, 25, 75, 9.75, 160, 40, 34);
 
-        System.out.println(Vandal.toString());
+        System.out.println(vandal.toString());
     }
 }
