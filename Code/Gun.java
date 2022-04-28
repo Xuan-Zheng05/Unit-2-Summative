@@ -79,12 +79,28 @@ public class Gun {
         return this.cost;
     }
 
-    public double reloadSpeed() {
+    public double getReloadSpeed() {
         return this.reloadSpeed;
     }
 
-    public int magazine() {
+    public int getMagazine() {
         return this.magazine;
+    }
+
+    public int getReserve() {
+        return this.reserve;
+    }
+
+    public int getHeadDmg() {
+        return this.headDmg;
+    }
+
+    public int getBodyDmg() {
+        return this.bodyDmg;
+    }
+
+    public int getLegDmg() {
+        return this.legDmg;
     }
 
     /*
