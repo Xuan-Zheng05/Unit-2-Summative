@@ -77,6 +77,26 @@ public class Gun {
     }
 
     /*
+     * Accessors
+     */
+
+    public boolean getSidearm() {
+        return this.sidearm;
+    }
+
+    public int getCost() {
+        return this.cost;
+    }
+
+    public double reloadSpeed() {
+        return this.reloadSpeed;
+    }
+
+    public int magazine() {
+        return this.magazine;
+    }
+
+    /*
      * Methods
      */
 
