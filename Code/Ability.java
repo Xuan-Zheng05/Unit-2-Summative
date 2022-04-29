@@ -46,12 +46,12 @@ public class Ability {
 	 * @param name: 		name of the ability 
 	 * @param cost: 		cost of the ability 
 	 * @param damage: 		how much damage the ability does
-	 * @param amount:  how many of the ability the agent has available to use
+	 * @param amount:               how many of the ability the agent has available to use
 	 * @param blind: 		if it blinds
 	 * @param slow: 		if it slows
 	 * @param concuss: 		if it concusses
 	 * @param decay: 		if it decays
-	 * @param vulnerable: 	if it can make enemies vulnerable
+	 * @param vulnerable: 	        if it can make enemies vulnerable
 	 * @param detect: 		if it can detects enemies
 	 */
 	public Ability(String name, int cost, int damage, int amount, boolean blind, boolean slow, boolean concuss, boolean decay, boolean vulnerable, boolean detect) { 
