@@ -2,9 +2,7 @@
 /**
  * Name: Yifei
  * Date: 04/28/2022
- *
- * Description:
- * Main class demonstrating functionality of the Agent class
+ * Description: Main class demonstrating functionality of the Agent class
  */
 
 public class AgentMain {
@@ -21,6 +19,9 @@ public class AgentMain {
       Ability[] abilityOfAgent = { test1, test2, test3, slowOrb };
       Gun vandal = new Gun("Vandal", 2900, true, 2.5, 25, 25, 75, 9.75, 160, 40, 34);
       Agents Neon = new Agents("Neon", "US", type[1], vandal, abilityOfAgent);
+      
       System.out.println(Neon.toString());
+      
    }
+   
 }
