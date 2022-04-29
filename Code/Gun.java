@@ -173,7 +173,7 @@ public class Gun {
      * toString method
      * returns all the attributes of the gun in a String
      * 
-     * @return gunString string containing the attributes of the human
+     * @return gunString string containing the attributes of the gun
      */
     public String toString() {
 

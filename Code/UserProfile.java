@@ -97,6 +97,12 @@ public class UserProfile {
         }
     }
 
+    /**
+     * toString method
+     * returns all the attributes of the profile in a String
+     * 
+     * @return profileString string containing the attributes of the profile
+     */
     public String toString() {
 
         String profileString = "";
