@@ -1,11 +1,12 @@
 /**
  * Name: Xuan
  * Date: 04/28/2022
- * Description: A program that houses the Gun class and all its attributes, accessors, mutators, and other methods.
+ * Description: A program that houses the Gun class and all its attributes,
+ * accessors, mutators, and other methods.
  */
 
 public class Gun {
-    
+
     /*
      * Attributes
      */
@@ -79,27 +80,27 @@ public class Gun {
      */
 
     public String getName() {
-        
+
         return this.name;
-        
+
     }
 
     public int getCost() {
-        
+
         return this.cost;
-        
+
     }
 
     public double getReloadSpeed() {
-        
+
         return this.reloadSpeed;
-        
+
     }
 
     public int getMagazine() {
-        
+
         return this.magazine;
-        
+
     }
 
     public int getReserve() {
@@ -107,9 +108,9 @@ public class Gun {
     }
 
     public int getHeadDmg() {
-        
+
         return this.headDmg;
-        
+
     }
 
     public int getBodyDmg() {
@@ -117,9 +118,9 @@ public class Gun {
     }
 
     public int getLegDmg() {
-        
+
         return this.legDmg;
-        
+
     }
 
     /*
@@ -134,37 +135,38 @@ public class Gun {
      * 
      */
     public void shoot(int times) {
-        
+
         this.magazine -= times;
-        
+
         if (this.magazine < 0) {
-            
+
             this.magazine = 0;
-            
+
         }
-        
+
     }
 
     /**
      * reload method
      * reloads the magazine to magazine size.
-     * if there is not enough reserve ammo for a full reload, only reload how much reserve ammo there is
+     * if there is not enough reserve ammo for a full reload, only reload how much
+     * reserve ammo there is
      */
     public void reload() {
-        
+
         // if amount of ammo in reserve is not enough to fill the entire magazine
         if (this.reserve - magazineSize < 0) {
-            
+
             this.magazine = this.reserve;
             this.reserve = 0;
-            
+
         } else {
-            
+
             this.magazine = magazineSize;
             this.reserve -= magazineSize;
-            
+
         }
-        
+
     }
 
     /**
@@ -174,7 +176,7 @@ public class Gun {
      * @return gunString string containing the attributes of the human
      */
     public String toString() {
-        
+
         String gunString = "";
 
         gunString = gunString + "Name: " + this.name + "\n";
@@ -189,7 +191,7 @@ public class Gun {
         gunString = gunString + "Body dmg: " + this.bodyDmg + "\n";
         gunString = gunString + "Leg dmg: " + this.legDmg + "\n";
         return gunString;
-        
+
     }
-    
+
 }
