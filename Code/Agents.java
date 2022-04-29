@@ -111,17 +111,17 @@ public class Agents {
     * @return the abilitys of the Agent
     */
 
-   public Ability getAbility() {
+   public Ability[] getAbility() {
 
-      Ability AgentAbility = new Ability("", 0, 0, 0, false, false, false, false, false, false);
+      Ability[] agentAbility = new Ability[4];
 
       for (int i = 0; i < 4; i++) {
 
-         AgentAbility = this.abilityOfAgent[i];
+         agentAbility[i] = this.abilityOfAgent[i];
 
       }
 
-      return AgentAbility;
+      return agentAbility;
    }
 
    /*

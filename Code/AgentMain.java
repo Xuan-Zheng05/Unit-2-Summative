@@ -20,6 +20,10 @@ public class AgentMain {
       Gun vandal = new Gun("Vandal", 2900, true, 2.5, 25, 25, 75, 9.75, 160, 40, 34);
       Agents Neon = new Agents("Neon", "US", type[1], vandal, abilityOfAgent);
 
+      Ability[] abilities = Neon.getAbility();
+      for (int i = 0; i < 4; i++) {
+         System.out.println(abilities[i].getName());
+      }
       System.out.println(Neon.toString());
 
    }
