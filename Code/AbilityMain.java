@@ -8,12 +8,12 @@ import java.io.*;
 
 public class AbilityMain {
 
-	public static void main(String[] args) throws IOException {
-		
-        Ability slowOrb = new Ability("Slow Orb", 200, 0, 2, false, true, false, false, false, false);
+        public static void main(String[] args) throws IOException {
 
-        System.out.println(slowOrb.toString());
-        
-	}
-	
+                Ability slowOrb = new Ability("Slow Orb", 200, 0, 2, false, true, false, false, false, false);
+
+                System.out.println(slowOrb.toString());
+
+        }
+
 }
