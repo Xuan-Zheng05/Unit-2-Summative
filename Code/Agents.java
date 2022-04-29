@@ -2,8 +2,7 @@
  * Names: Yifei Qi
  * Date: April 28th, 2022
  * Description: This program will include all parts for agents in valorants
- * April.28.2020
- * - Added all attributes,accessors, and mutator methods
+ * April.28.2020 - Added all attributes, accessors, and mutator methods
  */
 
 public class Agents {
@@ -43,7 +42,9 @@ public class Agents {
       this.gun = gun;
       for (int i = 0; i < 4; i++) {
          this.abilityOfAgent[i] = abilityOfAgent[i];
+         
       }
+     
    }
 
    /*
@@ -57,7 +58,9 @@ public class Agents {
     */
 
    public String getName() {
+      
       return this.name;
+      
    }
 
    /**
@@ -67,11 +70,15 @@ public class Agents {
     */
 
    public String getRole() {
+      
       return this.role[0];
+      
    }
 
    static public String[] getRoleArray() {
+      
       return role.clone();
+      
    }
 
    /**
@@ -81,7 +88,9 @@ public class Agents {
     */
 
    public String getNation() {
+      
       return this.nation;
+      
    }
 
    /**
@@ -91,7 +100,9 @@ public class Agents {
     */
 
    public Ability[] getAbilityArray() {
+      
       return abilityOfAgent.clone();
+      
    }
 
    /**
@@ -101,20 +112,26 @@ public class Agents {
     */
 
    public Ability getAbility() {
+      
       Ability AgentAbility = new Ability("", 0, 0, false, false, false, false, false, false);
+      
       for (int i = 0; i < 4; i++) {
+         
          AgentAbility = this.abilityOfAgent[i];
+         
       }
 
       return AgentAbility;
    }
 
    /*
-    * mutator
+    * Mutator
     */
 
    public Gun gun() {
+      
       return this.gun;
+      
    }
 
    /*
@@ -135,10 +152,16 @@ public class Agents {
       agentString = agentString + "Nation: " + this.nation + "\n";
       agentString = agentString + "Role: " + this.role[0] + "\n";
       agentString = agentString + "Gun: " + this.gun.getName() + "\n";
+      
       for (int i = 0; i < 3; i++) {
+         
          agentString = agentString + "Ability " + (i + 1) + ": " + this.abilityOfAgent[i].getName() + "\n";
+         
       }
+      
       agentString = agentString + "Ultimate: " + this.abilityOfAgent[3].getName() + "\n";
       return agentString;
+      
    }
+   
 }
