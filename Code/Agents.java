@@ -18,8 +18,8 @@ public class Agents {
    /** natioality of the Agents */
    private String nation;
 
-   /** Type of the Agents */
-   static private String[] type = { "Controller", "Sentinel", "Initiator", "Duelist" };
+   /** role of the Agents */
+   static private String[] role = { "Controller", "Sentinel", "Initiator", "Duelist" };
 
    /** Guns of the Agents */
    private Gun gun;
@@ -36,10 +36,10 @@ public class Agents {
     * @param AbilityOfAgent the four ability of agent
     */
 
-   public Agents(String name, String nation, String type, Gun gun, Ability abilityOfAgent[]) {
+   public Agents(String name, String nation, String role, Gun gun, Ability abilityOfAgent[]) {
       this.name = name;
       this.nation = nation;
-      this.type[0] = type;
+      this.role[0] = role;
       this.gun = gun;
       for (int i = 0; i < 4; i++) {
          this.abilityOfAgent[i] = abilityOfAgent[i];
@@ -66,12 +66,12 @@ public class Agents {
     * @return the nationality of the Agent
     */
 
-   public String getType() {
-      return this.type[0];
+   public String getRole() {
+      return this.role[0];
    }
 
-   static public String[] getTypeArray() {
-      return type.clone();
+   static public String[] getRoleArray() {
+      return Role.clone();
    }
 
    /**
@@ -133,7 +133,7 @@ public class Agents {
 
       agentString = agentString + "Name: " + this.name + "\n";
       agentString = agentString + "Nation: " + this.nation + "\n";
-      agentString = agentString + "Type: " + this.type[0] + "\n";
+      agentString = agentString + "Role: " + this.role[0] + "\n";
       agentString = agentString + "Gun: " + this.gun.getName() + "\n";
       for (int i = 0; i < 3; i++) {
          agentString = agentString + "Ability " + (i + 1) + ": " + this.abilityOfAgent[i].getName() + "\n";
