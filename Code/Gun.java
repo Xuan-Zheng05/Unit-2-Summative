@@ -27,6 +27,9 @@ public class Gun {
     /** how much ammo is in each magazine */
     private int magazine;
 
+    /** how many bullets a magazine can store */
+    private int magazineSize;
+
     /** how many bullets the gun has in reserve */
     private int reserve;
 
@@ -45,18 +48,19 @@ public class Gun {
     /**
      * Constructor
      * 
-     * @param name        name of the gun
-     * @param cost        cost of the gun
-     * @param automatic   firemode of the gun
-     * @param reloadSpeed time it takes for reload
-     * @param magazine    how many bullets in each magazine
-     * @param reserve     how many bullets in reserve
-     * @param fireRate    how many bullets the gun fires each second
-     * @param headDmg     dmg of a headshot
-     * @param bodyDmg     dmg of a bodyshot
-     * @param legDmg      dmg of legshot
+     * @param name         name of the gun
+     * @param cost         cost of the gun
+     * @param automatic    firemode of the gun
+     * @param reloadSpeed  time it takes for reload
+     * @param magazine     how many bullets in each magazine
+     * @param magazineSize how many bullets a magazine can store
+     * @param reserve      how many bullets in reserve
+     * @param fireRate     how many bullets the gun fires each second
+     * @param headDmg      dmg of a headshot
+     * @param bodyDmg      dmg of a bodyshot
+     * @param legDmg       dmg of legshot
      */
-    public Gun(String name, int cost, boolean automatic, double reloadSpeed, int magazine,
+    public Gun(String name, int cost, boolean automatic, double reloadSpeed, int magazine, int magazineSize,
             int reserve, double fireRate, int headDmg, int bodyDmg, int legDmg) {
 
         this.name = name;
@@ -64,6 +68,7 @@ public class Gun {
         this.automatic = automatic;
         this.reloadSpeed = reloadSpeed;
         this.magazine = magazine;
+        this.magazineSize = magazineSize;
         this.reserve = reserve;
         this.fireRate = fireRate;
         this.headDmg = headDmg;
@@ -110,6 +115,24 @@ public class Gun {
     /*
      * Methods
      */
+
+    public void shoot() {
+        this.magazine -= 1;
+        if (this.magazine < 0) {
+            this.magazine = 0;
+        }
+    }
+
+    public void reload() {
+        // if amount of ammo in reserve is not enough to fill the entire magazine
+        if (this.reserve - magazineSize < 0) {
+            this.magazine = this.reserve;
+            this.reserve = 0;
+        } else {
+            this.magazine = magazineSize;
+            this.reserve -= magazineSize;
+        }
+    }
 
     /**
      * toString method

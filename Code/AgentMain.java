@@ -19,7 +19,7 @@ public class AgentMain {
       Ability test2 = new Ability("test2", 200, 0, false, true, false, false, false, false);
       Ability test3 = new Ability("test3", 200, 0, false, true, false, false, false, false);
       Ability[] abilityOfAgent = { test1, test2, test3, slowOrb };
-      Gun vandal = new Gun("Vandal", 2900, true, 2.5, 25, 75, 9.75, 160, 40, 34);
+      Gun vandal = new Gun("Vandal", 2900, true, 2.5, 25, 25, 75, 9.75, 160, 40, 34);
       Agents Neon = new Agents("Neon", "US", type[1], vandal, abilityOfAgent);
       System.out.println(Neon.toString());
    }
