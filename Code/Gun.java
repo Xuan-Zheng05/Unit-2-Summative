@@ -116,6 +116,13 @@ public class Gun {
      * Methods
      */
 
+    /**
+     * shoot method
+     * subtracts one bullet from the magazine
+     * 
+     * @param magazine the amount of bullets in the magazine
+     * 
+     */
     public void shoot() {
         this.magazine -= 1;
         if (this.magazine < 0) {
@@ -123,6 +130,17 @@ public class Gun {
         }
     }
 
+    /**
+     * reload method
+     * reloads the magazine to magazine size.
+     * if there is not enough reserve ammo for a full reload, only reload how much
+     * reserve ammo there is
+     * 
+     * @param magazine     the amount of bullets in the magazine
+     * @param magazineSize how many bullets a magazine can hold
+     * @param reserve      amount of bullets the gun has in reserve
+     * 
+     */
     public void reload() {
         // if amount of ammo in reserve is not enough to fill the entire magazine
         if (this.reserve - magazineSize < 0) {
