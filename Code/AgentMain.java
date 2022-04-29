@@ -12,7 +12,7 @@ public class AgentMain {
    // Main testing method
    public static void main(String[] args) {
 
-      String[] type = Agents.getTypeArray();
+      String[] type = Agents.getRoleArray();
 
       Ability slowOrb = new Ability("Slow Orb", 200, 0, false, true, false, false, false, false);
       Ability test1 = new Ability("test1", 200, 0, false, true, false, false, false, false);
