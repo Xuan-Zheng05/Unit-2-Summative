@@ -71,7 +71,7 @@ public class Agents {
    }
 
    static public String[] getRoleArray() {
-      return Role.clone();
+      return role.clone();
    }
 
    /**
