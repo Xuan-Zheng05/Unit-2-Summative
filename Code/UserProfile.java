@@ -12,6 +12,7 @@ public class UserProfile {
     /** The name of the player */
     private String username;
 
+    /** The agent the player is playing */
     private Agents agent;
 
     /** PlayerProfiles which is friends with this player */
@@ -21,6 +22,7 @@ public class UserProfile {
      * Constructor with username
      * 
      * @param username the name of the user
+     * @param agent    the agent the user is playing
      */
     public UserProfile(String username, Agents agent) {
         if (username.length() < 3) {
