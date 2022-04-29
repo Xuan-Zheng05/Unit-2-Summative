@@ -10,8 +10,6 @@ public class Sprint1Main {
     // Main testing method
     public static void main(String[] args) {
 
-        String[] type = Agents.getRoleArray();
-
         // initalized abilities
         Ability slowOrb = new Ability("Slow Orb", 200, 0, 2, false, true, false, false, false, false);
         Ability test1 = new Ability("test1", 200, 0, 2, false, true, false, false, false, false);
@@ -21,7 +19,8 @@ public class Sprint1Main {
 
         // initalized agent and gun
         Gun vandal = new Gun("Vandal", 2900, true, 2.5, 25, 25, 75, 9.75, 160, 40, 34);
-        Agents neon = new Agents("Neon", "US", type[1], vandal, abilityOfAgent);
+        String[] role = Agents.getRoleArray();
+        Agents neon = new Agents("Neon", "US", role[1], vandal, abilityOfAgent);
 
         // initalized user profile
         UserProfile nauxzd = new UserProfile("nauxzd", neon);
