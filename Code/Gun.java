@@ -118,13 +118,13 @@ public class Gun {
 
     /**
      * shoot method
-     * subtracts one bullet from the magazine
+     * subtracts one bullet from the magazine each time it is shot
      * 
-     * @param magazine the amount of bullets in the magazine
+     * @param times times you shoot the gun
      * 
      */
-    public void shoot() {
-        this.magazine -= 1;
+    public void shoot(int times) {
+        this.magazine -= times;
         if (this.magazine < 0) {
             this.magazine = 0;
         }
@@ -135,10 +135,6 @@ public class Gun {
      * reloads the magazine to magazine size.
      * if there is not enough reserve ammo for a full reload, only reload how much
      * reserve ammo there is
-     * 
-     * @param magazine     the amount of bullets in the magazine
-     * @param magazineSize how many bullets a magazine can hold
-     * @param reserve      amount of bullets the gun has in reserve
      * 
      */
     public void reload() {
@@ -166,6 +162,7 @@ public class Gun {
         gunString = gunString + "Automatic: " + this.automatic + "\n";
         gunString = gunString + "Reload Speed: " + this.reloadSpeed + "s\n";
         gunString = gunString + "Magazine: " + this.magazine + " rounds\n";
+        gunString = gunString + "Magazine Size: " + this.magazineSize + " rounds\n";
         gunString = gunString + "Reserve: " + this.reserve + " rounds\n";
         gunString = gunString + "Fire rate: " + this.fireRate + " rounds/s\n";
         gunString = gunString + "Head dmg: " + this.headDmg + "\n";

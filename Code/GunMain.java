@@ -13,7 +13,7 @@ import java.io.*;
 public class GunMain {
     public static void main(String[] args) throws IOException {
         Gun vandal = new Gun("Vandal", 2900, true, 2.5, 25, 25, 75, 9.75, 160, 40, 34);
-
+        vandal.shoot(5);
         System.out.println(vandal.toString());
     }
 }
