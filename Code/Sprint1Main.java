@@ -31,6 +31,7 @@ public class Sprint1Main {
         for (int i = 0; i < 4; i++) {
             System.out.println(abilities[i].getName());
         }
+        System.out.println();
         System.out.println(nauxzd.toString());
 
     }
