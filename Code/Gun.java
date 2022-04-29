@@ -75,6 +75,10 @@ public class Gun {
      * Accessors
      */
 
+    public String getName() {
+        return this.name;
+    }
+
     public int getCost() {
         return this.cost;
     }

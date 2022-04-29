@@ -25,7 +25,7 @@ public class Agents {
    private Gun gun;
 
    /** Abillities of the Agents */
-   private Ability[] AbilityOfAgent = new Ability[4];
+   private Ability[] abilityOfAgent = new Ability[4];
 
    /**
     * Constructor
@@ -36,13 +36,13 @@ public class Agents {
     * @param AbilityOfAgent the four ability of agent
     */
 
-   public Agents(String name, String nation, String type, Gun gun, Ability AbilityOfAgent[]) {
+   public Agents(String name, String nation, String type, Gun gun, Ability abilityOfAgent[]) {
       this.name = name;
       this.nation = nation;
       this.type[0] = type;
       this.gun = gun;
       for (int i = 0; i < 4; i++) {
-         this.AbilityOfAgent[i] = AbilityOfAgent[i];
+         this.abilityOfAgent[i] = abilityOfAgent[i];
       }
    }
 
@@ -91,7 +91,7 @@ public class Agents {
     */
 
    public Ability[] getAbilityArray() {
-      return AbilityOfAgent.clone();
+      return abilityOfAgent.clone();
    }
 
    /**
@@ -103,7 +103,7 @@ public class Agents {
    public Ability getAbility() {
       Ability AgentAbility = new Ability("", 0, 0, false, false, false, false, false, false);
       for (int i = 0; i < 4; i++) {
-         AgentAbility = this.AbilityOfAgent[i];
+         AgentAbility = this.abilityOfAgent[i];
       }
 
       return AgentAbility;
@@ -134,10 +134,11 @@ public class Agents {
       agentString = agentString + "Name: " + this.name + "\n";
       agentString = agentString + "Nation: " + this.nation + "\n";
       agentString = agentString + "Type: " + this.type[0] + "\n";
-      agentString = agentString + "Guns: " + this.gun + "\n";
-      for (int i = 0; i < 4; i++) {
-         agentString = agentString + "Ability: " + this.AbilityOfAgent[i] + "\n";
+      agentString = agentString + "Gun: " + this.gun.getName() + "\n";
+      for (int i = 0; i < 3; i++) {
+         agentString = agentString + "Ability " + (i + 1) + ": " + this.abilityOfAgent[i].getName() + "\n";
       }
+      agentString = agentString + "Ultimate: " + this.abilityOfAgent[3].getName() + "\n";
       return agentString;
    }
 }
