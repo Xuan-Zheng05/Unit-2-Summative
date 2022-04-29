@@ -32,6 +32,8 @@ public class Sprint1Main {
             System.out.println(abilities[i].getName());
         }
         System.out.println();
+
+        // prints out all the attributes of a player
         System.out.println(nauxzd.toString());
 
     }
