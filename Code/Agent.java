@@ -3,8 +3,10 @@
  * Date: April 28th, 2022
  * Description: This program will include all parts for agents in valorants
  * April.28.2022 - Added all attributes, accessors, and mutator methods
- * April.29.2022 - Fixed getAbility function, deleted duplicated accessors, added comments
- * May.2.2022 - Rename the whole program to Agent, Add Hp and Armor check to Attributes, fixed Comments
+ * April.29.2022 - Fixed getAbility function, deleted duplicated accessors,
+ * added comments
+ * May.2.2022 - Rename the whole program to Agent, Add Hp and Armor check to
+ * Attributes, fixed Comments
  */
 
 public class Agent {
@@ -34,28 +36,31 @@ public class Agent {
    /** Whether the Agent has Armor or not */
    private Boolean hasArmor;
 
-
    /**
     * Constructor
     * 
-    * @param name           name of the agents
-    * @param nation         nationality of the Agent
-    * @param agentHp        Hps of the Agent
-    * @param gun            the gun that the Agent is using
+    * @param name             name of the agents
+    * @param nation           nationality of the Agent
+    * @param agentHp          Hps of the Agent
+    * @param gun              the gun that the Agent is using
     * @param AbilityOfAgent[] the four ability of agent
-    * @param hasArmor       Checker to check whether the Agent has Armor
+    * @param hasArmor         Checker to check whether the Agent has Armor
     */
 
-   public Agent(String name, String nation, int agentHp, String role, Gun gun, Ability abilityOfAgent[],Boolean hasArmor) {
+   public Agent(String name, String nation, String role, Gun gun, Ability abilityOfAgent[], Boolean hasArmor) {
       this.name = name;
       this.nation = nation;
-      this.agentHp = agentHp;
       this.role[0] = role;
       this.gun = gun;
       for (int i = 0; i < 4; i++) {
-         this.abilityOfAgent[i] = abilityOfAgent[i];     
+         this.abilityOfAgent[i] = abilityOfAgent[i];
       }
       this.hasArmor = hasArmor;
+      if (this.hasArmor) {
+         this.agentHp = 150;
+      } else {
+         this.agentHp = 150;
+      }
    }
 
    /*
@@ -69,9 +74,9 @@ public class Agent {
     */
 
    public String getName() {
-   
+
       return this.name;
-   
+
    }
 
    /**
@@ -80,37 +85,34 @@ public class Agent {
     * @return the nationality of the Agent
     */
 
-    public String getNation() 
-    {
-   
-        return this.nation;
-     
-    }
+   public String getNation() {
 
-     /**
+      return this.nation;
+
+   }
+
+   /**
     * Gets the Agent hp
     * 
     * @return the hp of the Agent
     */
 
-    public int getAgentHp() 
-    {
-   
-        return this.agentHp;
-     
-    }
+   public int getAgentHp() {
 
+      return this.agentHp;
 
-    /**
+   }
+
+   /**
     * Gets the type of the agent
     * 
     * @return the type of the Agent
     */
 
    public String getRole() {
-   
+
       return this.role[0];
-   
+
    }
 
    static public String[] getRoleArray() {
@@ -124,47 +126,43 @@ public class Agent {
     */
 
    public Ability[] getAbility() {
-   
+
       Ability[] agentAbility = new Ability[4];
-   
+
       for (int i = 0; i < 4; i++) {
-      
+
          agentAbility[i] = this.abilityOfAgent[i];
-      
+
       }
-   
+
       return agentAbility;
    }
-   
+
    /**
     * Gets the gun of the agent
     * 
     * @return the gun of the Agent
     */
 
-   public Gun gun() 
-   {
-   
+   public Gun gun() {
+
       return this.gun;
    }
 
    /**
     * Check whether the agent have armor
     * 
-    * @return the armor check  of the Agent
+    * @return the armor check of the Agent
     */
 
-    public Boolean getHasArmor() 
-    {
-    
-       return this.hasArmor;
-    }
+   public Boolean getHasArmor() {
+
+      return this.hasArmor;
+   }
 
    /*
     * Mutator
     */
-
-
 
    /*
     * Methods
@@ -177,23 +175,23 @@ public class Agent {
     */
 
    public String toString() {
-   
+
       String agentString = "";
-   
+
       agentString = agentString + "Name: " + this.name + "\n";
       agentString = agentString + "Nation: " + this.nation + "\n";
       agentString = agentString + "Role: " + this.role[0] + "\n";
       agentString = agentString + "Gun: " + this.gun.getName() + "\n";
-   
+
       for (int i = 0; i < 3; i++) {
-      
+
          agentString = agentString + "Ability " + (i + 1) + ": " + this.abilityOfAgent[i].getName() + "\n";
-      
+
       }
-   
+
       agentString = agentString + "Ultimate: " + this.abilityOfAgent[3].getName() + "\n";
       return agentString;
-   
+
    }
 
 }
