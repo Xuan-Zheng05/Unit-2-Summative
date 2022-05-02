@@ -17,10 +17,11 @@ public class Sprint1Main {
         Ability resurrection = new Ability("Resurection", 0, 0, 2, false, true, false, false, false, false);
         Ability[] abilityOfAgent = { slowOrb, test1, test2, resurrection };
 
-        // initalized agent and gun
-        Gun vandal = new Gun("Vandal", 2900, true, 2.5, 25, 25, 75, 9.75, 160, 40, 34);
-        String[] role = Agents.getRoleArray();
-        Agents neon = new Agents("Neon", "US", role[1], vandal, abilityOfAgent);
+        // initalized agent, skin, and gun
+        Skin none = new Skin("None", false, 0);
+        Gun vandal = new Gun("Vandal", none, 2900, true, 2.5, 25, 25, 75, 9.75, 160, 40, 34);
+        String[] role = Agent.getRoleArray();
+        Agent neon = new Agent("Neon", "US", role[1], vandal, abilityOfAgent, false);
 
         // initalized user profile
         UserProfile nauxzd = new UserProfile("nauxzd", neon);

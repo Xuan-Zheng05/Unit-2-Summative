@@ -13,7 +13,7 @@ public class UserProfile {
     private String username;
 
     /** The agent the player is playing */
-    private Agents agent;
+    private Agent agent;
 
     /** PlayerProfiles which is friends with this player */
     ArrayList<UserProfile> friends; // This is an arraylist which just mean that the array is resizable
@@ -24,7 +24,7 @@ public class UserProfile {
      * @param username the name of the user
      * @param agent    the agent the user is playing
      */
-    public UserProfile(String username, Agents agent) {
+    public UserProfile(String username, Agent agent) {
         if (username.length() < 3) {
             System.out.println("Name cannot be smaller than 3 characters.");
         } else if (username.length() > 16) {
