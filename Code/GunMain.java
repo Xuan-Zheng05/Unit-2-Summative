@@ -12,8 +12,9 @@ public class GunMain {
 
     public static void main(String[] args) throws IOException {
 
-        // initalized gun
-        Gun vandal = new Gun("Vandal", 2900, true, 2.5, 25, 25, 75, 9.75, 160, 40, 34);
+        // initalized gun with skin
+        Skin none = new Skin("None", false, 0);
+        Gun vandal = new Gun("Vandal", none, 2900, true, 2.5, 25, 25, 75, 9.75, 160, 40, 34);
 
         // print out toString method
         System.out.println(vandal.toString());

@@ -14,6 +14,9 @@ public class Gun {
     /** name of the gun */
     private String name;
 
+    /** skin of the gun */
+    private Skin skin;
+
     /** cost of the gun */
     private int cost;
 
@@ -48,6 +51,7 @@ public class Gun {
      * Constructor
      * 
      * @param name         name of the gun
+     * @param skin         skin of the gun
      * @param cost         cost of the gun
      * @param automatic    firemode of the gun
      * @param reloadSpeed  time it takes for reload
@@ -59,10 +63,11 @@ public class Gun {
      * @param bodyDmg      dmg of a bodyshot
      * @param legDmg       dmg of legshot
      */
-    public Gun(String name, int cost, boolean automatic, double reloadSpeed, int magazine, int magazineSize,
+    public Gun(String name, Skin skin, int cost, boolean automatic, double reloadSpeed, int magazine, int magazineSize,
             int reserve, double fireRate, int headDmg, int bodyDmg, int legDmg) {
 
         this.name = name;
+        this.skin = skin;
         this.cost = cost;
         this.automatic = automatic;
         this.reloadSpeed = reloadSpeed;
@@ -82,6 +87,12 @@ public class Gun {
     public String getName() {
 
         return this.name;
+
+    }
+
+    public String getSkin() {
+
+        return this.skin.getName();
 
     }
 
@@ -180,6 +191,7 @@ public class Gun {
         String gunString = "";
 
         gunString = gunString + "Name: " + this.name + "\n";
+        gunString = gunString + "Skin: " + this.skin.getName() + "\n";
         gunString = gunString + "Cost: $" + this.cost + "\n";
         gunString = gunString + "Automatic: " + this.automatic + "\n";
         gunString = gunString + "Reload Speed: " + this.reloadSpeed + "s\n";
