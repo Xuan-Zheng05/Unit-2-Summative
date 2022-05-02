@@ -20,6 +20,30 @@ public class Skin {
         this.price = price;
     }
 
+    public String getName() {
+
+        return this.name;
+
+    }
+
+    public Gun getGun() {
+
+        return this.gun;
+
+    }
+
+    public boolean getUpgradeable() {
+
+        return this.upgrade;
+
+    }
+
+    public int getPrice() {
+
+        return this.price;
+
+    }
+
     public String toString() {
 
         String skinString = "";
@@ -31,5 +55,4 @@ public class Skin {
         return skinString;
 
     }
-
 }
