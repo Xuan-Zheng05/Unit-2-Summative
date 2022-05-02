@@ -59,7 +59,7 @@ public class Agent {
       if (this.hasArmor) {
          this.agentHp = 150;
       } else {
-         this.agentHp = 150;
+         this.agentHp = 100;
       }
    }
 
