@@ -1,17 +1,58 @@
 /**
- * 
- * @author Yuting
- *
+ * Name: Xuan
+ * Date: 05/02/2022
  */
+
 public class Skin {
 
-    /** The name of the skin */
-    String name;
+    private String name;
 
-    /** The valorant point cost of the skin */
-    int cost;
+    private Gun gun;
 
-    /** The texture of the skin (Not implement) */
-    String texture;
+    private boolean upgrade;
 
+    private int price;
+
+    public Skin(String name, Gun gun, boolean upgrade, int price) {
+        this.name = name;
+        this.gun = gun;
+        this.upgrade = upgrade;
+        this.price = price;
+    }
+
+    public String getName() {
+
+        return this.name;
+
+    }
+
+    public Gun getGun() {
+
+        return this.gun;
+
+    }
+
+    public boolean getUpgradeable() {
+
+        return this.upgrade;
+
+    }
+
+    public int getPrice() {
+
+        return this.price;
+
+    }
+
+    public String toString() {
+
+        String skinString = "";
+
+        skinString = skinString + "Name: " + this.name + "\n";
+        skinString = skinString + "Gun: " + this.gun.getName() + "\n";
+        skinString = skinString + "Upgradeable: " + this.upgrade + "\n";
+        skinString = skinString + "Price: " + this.price + "VP\n";
+        return skinString;
+
+    }
 }
