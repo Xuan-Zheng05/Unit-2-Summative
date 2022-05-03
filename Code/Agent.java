@@ -163,41 +163,33 @@ public class Agent {
     * Mutator
     */
 
-
-
-
-
    /*
     * Methods
     */
 
    /**
-   * Wears the armor for agent, set wearArmor = true
-   * 
-   * @return hasArmor checker to check whether the agent wears armor
-   */
-    
-   public Boolean wearArmor()
-   {
+    * Wears the armor for agent, set wearArmor = true
+    * 
+    * @return hasArmor checker to check whether the agent wears armor
+    */
+
+   public Boolean wearArmor() {
       hasArmor = true;
       return hasArmor;
    }
 
-
    /**
-   * remove the armor for the agent if it has one
-   * 
-   * @return hasArmor checker to check whether the agent wears armor
-   */
-    
-  public Boolean removeArmor()
-  {
-   if (hasArmor == true) 
-   {
-      hasArmor = false;
+    * remove the armor for the agent if it has one
+    * 
+    * @return hasArmor checker to check whether the agent wears armor
+    */
+
+   public Boolean removeArmor() {
+      if (hasArmor == true) {
+         hasArmor = false;
+      }
+      return hasArmor;
    }
-     return hasArmor;
-  }
 
    /**
     * Displays all the attributes of the ability in a String
