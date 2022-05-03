@@ -1,6 +1,6 @@
-
 /**
- * Date: 04/28/2022
+ * Names: Bonny, Xuan, Yifei, Yuting
+ * Date: May 3rd, 2022
  * Description: Main class demonstrating functionality of the entire 2nd sprint
  */
 
