@@ -28,7 +28,7 @@ public class Sprint2Main {
         Skin reaverVandal = new Skin("Reaver Vandal", true, 1775);
         Gun vandal = new Gun("Vandal", none, 2900, true, 2.5, 25, 25, 75, 9.75, 160, 40, 34);
         String[] role = Agent.getRoleArray();
-        Agent neon = new Agent("Neon", "US", role[1], vandal, abilityOfAgent, false);
+        Agent neon = new Agent("Neon", "US", role[1], vandal, abilityOfAgent, false, 2000);
 
         // initalized skins array, inventory, and skins for one user
         ArrayList<Skin> nauxzdSkins = new ArrayList<>();

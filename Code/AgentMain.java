@@ -19,7 +19,7 @@ public class AgentMain {
       Ability[] abilityOfAgent = { slowOrb, test1, test2, resurrection };
       Skin none = new Skin("None", false, 0);
       Gun vandal = new Gun("Vandal", none, 2900, true, 2.5, 25, 25, 75, 9.75, 160, 40, 34);
-      Agent Neon = new Agent("Neon", "US", type[1], vandal, abilityOfAgent, true);
+      Agent Neon = new Agent("Neon", "US", type[1], vandal, abilityOfAgent, true, 2000);
 
       Ability[] abilities = Neon.getAbility();
       for (int i = 0; i < 4; i++) {

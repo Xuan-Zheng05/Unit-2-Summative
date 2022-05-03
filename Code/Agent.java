@@ -36,6 +36,9 @@ public class Agent {
    /** Whether the Agent has Armor or not */
    private Boolean hasArmor;
 
+   /** amount of credits the agent has */
+   private int credits;
+
    /**
     * Constructor
     * 
@@ -46,7 +49,8 @@ public class Agent {
     * @param hasArmor         Checker to check whether the Agent has Armor
     */
 
-   public Agent(String name, String nation, String role, Gun gun, Ability abilityOfAgent[], Boolean hasArmor) {
+   public Agent(String name, String nation, String role, Gun gun, Ability abilityOfAgent[], Boolean hasArmor,
+         int credits) {
       this.name = name;
       this.nation = nation;
       this.role[0] = role;
@@ -60,6 +64,7 @@ public class Agent {
       } else {
          this.agentHp = 100;
       }
+      this.credits = credits;
    }
 
    /*
@@ -159,6 +164,18 @@ public class Agent {
       return this.hasArmor;
    }
 
+   /**
+    * Gets the amount of credits of the agent
+    * 
+    * @return the amount of credits
+    */
+
+   public int getCredits() {
+
+      return this.credits;
+
+   }
+
    /*
     * Mutator
     */
@@ -213,6 +230,7 @@ public class Agent {
       }
 
       agentString = agentString + "Ultimate: " + this.abilityOfAgent[3].getName() + "\n";
+      agentString = agentString + "Credits: " + this.credits + "\n";
       return agentString;
 
    }
