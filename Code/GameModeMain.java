@@ -11,7 +11,7 @@ import java.io.*;
 public class GameModeMain
 {
     static private GameMode[] gameModeList = new GameMode[4];
-    public static GameMode[] GameModes ()
+    public static GameMode[] initialGameModes ()
     {
         GameMode unrated = new GameMode("Unrated",40,25,10,false,true,false);
         GameMode competitive = new GameMode("Competitive",40,25,10,false,true,true);
