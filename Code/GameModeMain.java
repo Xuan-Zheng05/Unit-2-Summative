@@ -10,7 +10,8 @@ import java.io.*;
 
 public class GameModeMain
 {
-    public static void main(String[] args) throws IOException 
+    static private GameMode[] gameModeList = new GameMode[4];
+    public static GameMode[] GameModes ()
     {
         GameMode unrated = new GameMode("Unrated",40,25,10,false,true,false);
         GameMode competitive = new GameMode("Competitive",40,25,10,false,true,true);
@@ -18,5 +19,11 @@ public class GameModeMain
         GameMode deathMatch = new GameMode ("DeathMatch",9,1,12,false,false,false);
         GameMode shootingTest = new GameMode("ShootingTest",100000,1,100000,false,false,false);
         GameMode[] gameModeList = {unrated,competitive,spikeRush,deathMatch,shootingTest};
+        return gameModeList;
+    }
+
+    public static GameMode[] getGameModeArray()
+    {
+        return gameModeList.clone();
     }
 }
