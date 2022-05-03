@@ -1,11 +1,10 @@
-
 /**
- * Name: Yifei
- * Date: 04/28/2022
- * Description: Main class demonstrating functionality of the Agent class
+ * Names: Bonny, Xuan, Yifei, Yuting
+ * Date: May 3rd, 2022
+ * Description: Main class demonstrating functionality of the entire 2nd sprint
  */
 
-public class Sprint1Main {
+public class Sprint2Main {
 
     // Main testing method
     public static void main(String[] args) {
