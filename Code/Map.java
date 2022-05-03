@@ -1,6 +1,6 @@
 /**
  * Names: Bonny Chen 
- * Date: April 28th, 2022 
+ * Date: May 2nd, 2022 
  * Description: The abilities class and all its attributes, accessors, and mutator methods
  */
 
@@ -40,15 +40,15 @@ public class Map {
 	/** 
 	 * Constructor to create a map
 	 * 
-	 * @param name: name of the map					
-	 * @param teleporter: if there is a teleporter
-	 * @param zipline: if there is a zipline 
-	 * @param sewer: if there is a sewer
-	 * @param ropes: if there are ropes 
-	 * @param cSite: if there is a C Site 
-	 * @param doorSwitch: if there is a door switch
-	 * @param shute: if there is a shute
-	 * @param dish: if there is a dish
+	 * @param name: 	name of the map					
+	 * @param teleporter: 	if there is a teleporter
+	 * @param zipline: 	if there is a zipline 
+	 * @param sewer: 	if there is a sewer
+	 * @param ropes: 	if there are ropes 
+	 * @param cSite: 	if there is a C Site 
+	 * @param doorSwitch: 	if there is a door switch
+	 * @param shute: 	if there is a shute
+	 * @param dish: 	if there is a dish
 	 */
 	public Map(String name, boolean teleporter, boolean zipline, boolean sewer, boolean ropes, boolean cSite, boolean doorSwitch, boolean shute, boolean dish) {
 	
