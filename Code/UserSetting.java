@@ -77,4 +77,16 @@ public class UserSetting {
         return this.volume;
     }
 
+    public int getQuality(){
+        return this.quality;
+    }
+
+    public double getAspectRato() {
+        return this.aspectRatio;
+    }
+
+    public boolean getIsFullScreen(){
+        return this.isFullScreen;
+    }
+    
 }
