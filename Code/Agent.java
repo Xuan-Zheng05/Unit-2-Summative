@@ -41,7 +41,6 @@ public class Agent {
     * 
     * @param name             name of the agents
     * @param nation           nationality of the Agent
-    * @param agentHp          Hps of the Agent
     * @param gun              the gun that the Agent is using
     * @param AbilityOfAgent[] the four ability of agent
     * @param hasArmor         Checker to check whether the Agent has Armor
@@ -164,14 +163,46 @@ public class Agent {
     * Mutator
     */
 
+
+
+
+
    /*
     * Methods
     */
 
    /**
+   * Wears the armor for agent, set wearArmor = true
+   * 
+   * @return hasArmor checker to check whether the agent wears armor
+   */
+    
+   public Boolean wearArmor()
+   {
+      hasArmor = true;
+      return hasArmor;
+   }
+
+
+   /**
+   * remove the armor for the agent if it has one
+   * 
+   * @return hasArmor checker to check whether the agent wears armor
+   */
+    
+  public Boolean removeArmor()
+  {
+   if (hasArmor == true) 
+   {
+      hasArmor = false;
+   }
+     return hasArmor;
+  }
+
+   /**
     * Displays all the attributes of the ability in a String
     * 
-    * @return abilityString with all the attributes of the ability
+    * @return agentString with all the attributes of the ability
     */
 
    public String toString() {

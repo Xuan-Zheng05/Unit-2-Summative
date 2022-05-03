@@ -15,6 +15,9 @@
     /** can the gamemodes buy weapon or not*/
     private boolean canBuyWeapon;
 
+    /** Whether the game is rated */
+    private boolean ratedChecker;
+
     /** name of each gamemodes */
     private String name;
 
@@ -30,13 +33,15 @@
     /**
     * Constructor
     * 
-    * @param name           name of the agents
-    * @param nation         nationality of the Agents
-    * @param gun            the gun that the agent is using
-    * @param AbilityOfAgent[] the four ability of agent
+    * @param name          name of the gamemode
+    * @param times         Maximum Time the game will have (count in minutes)
+    * @param totalPlayers  maximum player this gamemode will have (both team in total)
+    * @param canPlantSpike whether the game can plant spike
+    * @param canBuyWeapon  whether the game allows players to buy weapon
+    * @param ratedChecker  checker to check whether the game is rated
     */
 
-   public GameMode (String name, int times, int totalRoundCount, int totalPlayers, boolean canPlantSpike, boolean canBuyWeapon) 
+   public GameMode (String name, int times, int totalRoundCount, int totalPlayers, boolean canPlantSpike, boolean canBuyWeapon,boolean ratedChecker) 
    {
 
      this.name = name;
@@ -45,7 +50,7 @@
      this.totalPlayers = totalPlayers;
      this.canPlantSpike = canPlantSpike;
      this.canBuyWeapon = canBuyWeapon;
-
+     this.ratedChecker = ratedChecker;
    }
 
    /*
