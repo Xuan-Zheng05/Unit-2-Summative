@@ -3,7 +3,6 @@
  * Date: May.2th, 2022
  * Description: This program will include all gamemodes in valorant
  * May.2th - Unrated, Competitive, Spike rush, DeathMatch, Shooting test
- * 
  */
 
  public class GameMode 
@@ -63,43 +62,37 @@
     * @return the name of the Agent
     */
 
-    public String getName() 
-    {
+    public String getName()  {
    
         return this.name;
      
     }
 
-    public int gettimes() 
-    {
+    public int gettimes()  {
    
         return this.times;
      
     }
 
-    public int gettotalRoundCount() 
-    {
+    public int gettotalRoundCount()  {
    
         return this.totalRoundCount;
      
     }
 
-    public int getTotalPlayerCount() 
-    {
+    public int getTotalPlayerCount()  {
    
         return this.totalPlayers;
      
     }
   
-    public Boolean getSpikePlant() 
-    {
+    public Boolean getSpikePlant()  {
    
         return this.canPlantSpike;
      
     }
 
-    public Boolean getCanBuyWeapon() 
-    {
+    public Boolean getCanBuyWeapon()  {
    
         return this.canBuyWeapon;
      
@@ -117,6 +110,7 @@
         GameModeString = GameModeString + "canPlantSpike: " + this.canPlantSpike + "\n";
         GameModeString = GameModeString + "canBuyWeapon: " + this.canBuyWeapon + "\n";
         return GameModeString;
-     
+    
      }
+  
 }
