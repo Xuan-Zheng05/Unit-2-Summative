@@ -14,7 +14,7 @@ public class Sprint2Main {
 
         // initalized GameModes
         GameMode[] gameModeList = GameModeMain.initialGameModes();
-        System.out.println("The gamemode is " + gameModeList[(int) Math.floor(Math.random() * 5)]);
+        System.out.println("The gamemode is " + gameModeList[(int) Math.floor(Math.random() * 5)].getName());
 
         // initalized abilities
         Ability slowOrb = new Ability("Slow Orb", 200, 0, 2, false, true, false, false, false, false);
