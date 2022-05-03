@@ -21,8 +21,4 @@ public class GameModeMain {
         GameMode[] gameModeList = { unrated, competitive, spikeRush, deathMatch, shootingTest };
         return gameModeList;
     }
-
-    public static GameMode[] getGameModeArray() {
-        return gameModeList.clone();
-    }
 }
