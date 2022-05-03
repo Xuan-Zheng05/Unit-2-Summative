@@ -21,10 +21,11 @@ public class UserProfile {
     /**
      * Constructor with username
      * 
-     * @param username the name of the user
-     * @param agent    the agent the user is playing
+     * @param username  the name of the user
+     * @param agent     the agent the user is playing
+     * @param inventory the inventory of the profile
      */
-    public UserProfile(String username, Agent agent) {
+    public UserProfile(String username, Agent agent, Inventory inventory) {
         if (username.length() < 3) {
             System.out.println("Name cannot be smaller than 3 characters.");
         } else if (username.length() > 16) {

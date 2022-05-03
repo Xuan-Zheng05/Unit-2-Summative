@@ -1,3 +1,5 @@
+import java.util.*;
+import java.io.*;
 
 /**
  * Date: 04/28/2022
@@ -18,12 +20,16 @@ public class Sprint2Main {
 
         // initalized agent, skin, and gun
         Skin none = new Skin("None", false, 0);
+        Skin reaverVandal = new Skin("Reaver Vandal", true, 1775);
         Gun vandal = new Gun("Vandal", none, 2900, true, 2.5, 25, 25, 75, 9.75, 160, 40, 34);
         String[] role = Agent.getRoleArray();
         Agent neon = new Agent("Neon", "US", role[1], vandal, abilityOfAgent, false);
 
         // initalized user profile
-        UserProfile nauxzd = new UserProfile("nauxzd", neon);
+        ArrayList<Skin> nauxzdSkins = new ArrayList<>();
+        nauxzdSkins.add(reaverVandal);
+        Inventory nauxzdInventory = new Inventory(500, 25, nauxzdSkins);
+        UserProfile nauxzd = new UserProfile("nauxzd", neon, nauxzdInventory);
 
         // printed out abilites of agent
         Ability[] abilities = neon.getAbility();
