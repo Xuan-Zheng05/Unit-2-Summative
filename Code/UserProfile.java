@@ -106,7 +106,7 @@ public class UserProfile {
 
     /**
      * This method sets the username for the user
-     * Username cannot be smaller than 3 or bigger than 6 characters
+     * Username cannot be smaller than 3 or bigger than 16 characters
      * 
      * @param username the username to be changed into
      */
