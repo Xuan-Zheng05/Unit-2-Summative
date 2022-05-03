@@ -49,8 +49,8 @@ public class Agent {
     * @param hasArmor         Checker to check whether the Agent has Armor
     */
 
-   public Agent(String name, String nation, String role, Gun gun, Ability abilityOfAgent[], Boolean hasArmor,
-         int credits) {
+   public Agent(String name, String nation, String role, Gun gun, Ability abilityOfAgent[], Boolean hasArmor,  int credits) 
+   {
       this.name = name;
       this.nation = nation;
       this.role[0] = role;
