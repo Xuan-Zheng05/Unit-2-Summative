@@ -12,6 +12,9 @@ public class Sprint2Main {
     // Main testing method
     public static void main(String[] args) {
 
+        // initalized GameModes
+        GameMode[] gamemodeList = GameModeMain.getGameModeArray();
+
         // initalized abilities
         Ability slowOrb = new Ability("Slow Orb", 200, 0, 2, false, true, false, false, false, false);
         Ability test1 = new Ability("test1", 200, 0, 2, false, true, false, false, false, false);
