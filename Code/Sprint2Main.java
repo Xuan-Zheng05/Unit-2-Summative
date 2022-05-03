@@ -14,6 +14,7 @@ public class Sprint2Main {
 
         // initalized GameModes
         GameMode[] gamemodeList = GameModeMain.getGameModeArray();
+        System.out.println("The gamemode is " + gamemodeList[(int) Math.floor(Math.random() * 5)]);
 
         // initalized abilities
         Ability slowOrb = new Ability("Slow Orb", 200, 0, 2, false, true, false, false, false, false);
@@ -29,7 +30,7 @@ public class Sprint2Main {
         String[] role = Agent.getRoleArray();
         Agent neon = new Agent("Neon", "US", role[1], vandal, abilityOfAgent, false);
 
-        // initalized user profile
+        // initalized skins array, inventory, and skins for one user
         ArrayList<Skin> nauxzdSkins = new ArrayList<>();
         nauxzdSkins.add(reaverVandal);
         Inventory nauxzdInventory = new Inventory(500, 25, nauxzdSkins);
