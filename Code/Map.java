@@ -32,8 +32,8 @@ public class Map {
 	/** if you can control the doors (open and close them) */
 	private boolean doorSwitch;
 
-	/** if there is a shute */
-	private boolean shute;
+	/** if there is a chute */
+	private boolean chute;
 
 	/** if there is a dish */
 	private boolean dish;
@@ -48,11 +48,11 @@ public class Map {
 	 * @param ropes:      if there are ropes
 	 * @param cSite:      if there is a C Site
 	 * @param doorSwitch: if there is a door switch
-	 * @param shute:      if there is a shute
+	 * @param chute:      if there is a chute
 	 * @param dish:       if there is a dish
 	 */
 	public Map(String name, boolean teleporter, boolean zipline, boolean sewer, boolean ropes, boolean cSite,
-			boolean doorSwitch, boolean shute, boolean dish) {
+			boolean doorSwitch, boolean chute, boolean dish) {
 
 		this.name = name;
 		this.teleporter = teleporter;
@@ -61,7 +61,7 @@ public class Map {
 		this.ropes = ropes;
 		this.cSite = cSite;
 		this.doorSwitch = doorSwitch;
-		this.shute = shute;
+		this.chute = chute;
 		this.dish = dish;
 
 	}
@@ -112,9 +112,9 @@ public class Map {
 
 	}
 
-	public boolean getShute() {
+	public boolean getchute() {
 
-		return this.shute;
+		return this.chute;
 
 	}
 
@@ -145,7 +145,7 @@ public class Map {
 		mapString = mapString + "Ropes: " + this.ropes + "\n";
 		mapString = mapString + "C Site: " + this.cSite + "\n";
 		mapString = mapString + "Close Door: " + this.doorSwitch + "\n";
-		mapString = mapString + "Shute: " + this.shute + "\n";
+		mapString = mapString + "chute: " + this.chute + "\n";
 		mapString = mapString + "Dish: " + this.dish + "\n";
 
 		return mapString;
