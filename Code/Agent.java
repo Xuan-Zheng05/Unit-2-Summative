@@ -213,6 +213,12 @@ public class Agent {
       Agent.gun = gun ;
     }
 
+    public static void buyWeapon (Agent Agent, Gun gun)
+    {
+       Agent.gun = gun;
+       Agent.credits = Agent.credits - gun.getCost();
+    }
+
    /*
     * Methods
     */
