@@ -39,8 +39,11 @@ public class Sprint2Main {
         // printed out abilites of agent
         Ability[] abilities = neon.getAbility();
         for (int i = 0; i < 4; i++) {
+        	
             System.out.println(abilities[i].getName());
+            
         }
+        
         System.out.println();
 
         // prints out all the attributes of a player
