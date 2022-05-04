@@ -9,6 +9,7 @@ import java.util.*;
 import java.io.*;
 
 public class GameModeMain {
+    
     static private GameMode[] gameModeList = new GameMode[4];
 
     public static GameMode[] initialGameModes() {
@@ -22,4 +23,5 @@ public class GameModeMain {
         return gameModeList;
         
     }
+    
 }
