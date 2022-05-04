@@ -22,8 +22,8 @@ public class Sprint2Main {
         Gun vandal = new Gun("Vandal", none, 2900, true, 2.5, 25, 25, 75, 9.75, 160, 40, 34);
         Gun spectre = new Gun( "spectre,",none,1600,true,2.25,30,30,90,13.33,78,26,22);
         Agent neon = AgentMain.Neon();
-        Agent.changeWeapon (neon, vandal);
-        Agent.buyWeapon(neon,spectre);
+        neon.changeWeapon(vandal);
+        neon.buyWeapon(spectre);
 
         // initalized skins array, inventory, and skins for one user
         ArrayList<Skin> nauxzdSkins = new ArrayList<>();

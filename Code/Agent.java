@@ -207,14 +207,14 @@ public class Agent {
     * Mutator
     */
 
-   public static void changeWeapon(Agent Agent, Gun gun) {
-      Agent.gun = gun;
+   public void changeWeapon(Gun gun) {
+      this.gun = gun;
    }
 
-    public static void buyWeapon (Agent Agent, Gun gun)
+    public void buyWeapon (Gun gun)
     {
-       Agent.gun = gun;
-       Agent.credits = Agent.credits - gun.getCost();
+       this.gun = gun;
+       this.credits = this.credits - gun.getCost();
     }
 
    /*
