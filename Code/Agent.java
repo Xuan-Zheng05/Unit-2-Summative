@@ -40,6 +40,34 @@ public class Agent {
    private int credits;
 
    /**
+    * Default Constructor with credis 0 at begining
+    * 
+    * @param name             name of the agents
+    * @param nation           nationality of the Agent
+    * @param gun              the gun that the Agent is using
+    * @param AbilityOfAgent[] the four ability of agent
+    * @param hasArmor         Checker to check whether the Agent has Armor
+    */
+
+    public Agent (String name, String nation, String role, Gun gun, Ability abilityOfAgent[], Boolean hasArmor)
+    {
+       this.name = name;
+       this.nation = nation;
+       this.role[0] = role;
+       this.gun = gun;
+       for (int i = 0; i < 4; i++) {
+          this.abilityOfAgent[i] = abilityOfAgent[i];
+       }
+       this.hasArmor = hasArmor;
+       if (this.hasArmor) {
+          this.agentHp = 150;
+       } else {
+          this.agentHp = 100;
+       }
+       this.credits = 0;
+    }
+
+   /**
     * Constructor
     * 
     * @param name             name of the agents
@@ -179,6 +207,11 @@ public class Agent {
    /*
     * Mutator
     */
+
+    public static void changeWeapon (Agent Agent, Gun gun )
+    {
+      Agent.gun = gun ;
+    }
 
    /*
     * Methods

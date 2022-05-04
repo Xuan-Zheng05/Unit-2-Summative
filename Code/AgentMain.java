@@ -5,27 +5,124 @@
  */
 
 public class AgentMain {
+   /* default gun for agent*/
+   static Skin none = new Skin("None", false, 0);
+   static Gun classic = new Gun("classic", none, 0, false, 1.75, 12, 12, 36, 6.75, 78, 26, 22);
+   static String[] role = Agent.getRoleArray(); /* "Controller", "Sentinel", "Initiator", "Duelist"*/
 
-   // Main testing method
-   public static void main(String[] args) {
-
-      String[] type = Agent.getRoleArray();
-
-      Ability slowOrb = new Ability("Slow Orb", 200, 0, 2, false, true, false, false, false, false);
-      Ability test1 = new Ability("test1", 200, 0, 2, false, true, false, false, false, false);
-      Ability test2 = new Ability("test2", 200, 0, 2, false, true, false, false, false, false);
-      Ability resurrection = new Ability("Resurection", 0, 0, 2, false, true, false, false, false, false);
-      Ability[] abilityOfAgent = { slowOrb, test1, test2, resurrection };
-      Skin none = new Skin("None", false, 0);
-      Gun vandal = new Gun("Vandal", none, 2900, true, 2.5, 25, 25, 75, 9.75, 160, 40, 34);
-      Agent Neon = new Agent("Neon", "US", type[1], vandal, abilityOfAgent, true, 2000);
-
-      Ability[] abilities = Neon.getAbility();
-      for (int i = 0; i < 4; i++) {
-         System.out.println(abilities[i].getName());
-      }
-      System.out.println(Neon.toString());
-
+   public static Agent Astra()
+   {
+      Agent astra = new Agent ("Astra","Ghana",role[0],classic,AbilityMain.astra(),false);
+      return astra;
    }
 
+   public static Agent BrimeStone()
+   {
+      Agent brimestone = new Agent ("Brimestone","Us",role[0],classic,AbilityMain.brimstone(),false);
+      return brimestone;
+   }
+
+   public static Agent Viper()
+   {
+      Agent viper = new Agent ("Viper","Us",role[0],classic,AbilityMain.viper(),false);
+      return viper;
+   }
+
+   public static Agent Omen()
+   {
+      Agent omen = new Agent ("Omen","Unknown",role[0],classic,AbilityMain.omen(),false);
+      return omen;
+   }
+
+   public static Agent Killjoy()
+   {
+      Agent killjoy = new Agent ("Killjoy","Germany",role[1],classic,AbilityMain.killjoy(),false);
+      return killjoy;
+   }
+
+   public static Agent Cypher()
+   {
+      Agent cypher = new Agent ("Cypher","Morroco",role[1],classic,AbilityMain.cypher(),false);
+      return cypher;
+   }
+
+   public static Agent Sova()
+   {
+      Agent sova = new Agent ("Sova","Russia",role[2],classic,AbilityMain.sova(),false);
+      return sova;
+   }
+
+   public static Agent Sage()
+   {
+      Agent sage = new Agent ("Sage","China",role[1],classic,AbilityMain.sage(),false);
+      return sage;
+   }
+
+   public static Agent Phoneix()
+   {
+      Agent phoneix = new Agent ("Phoneix","United Kingdom",role[3],classic,AbilityMain.phoenix(),false);
+      return phoneix;
+   }
+
+   public static Agent Jett()
+   {
+      Agent jett = new Agent ("Jett","South Korea",role[3],classic,AbilityMain.jett(),false);
+      return jett;
+   }
+
+   public static Agent Reyna()
+   {
+      Agent reyna = new Agent ("Reyna","Mexico",role[3],classic,AbilityMain.reyna(),false);
+      return reyna;
+   }
+
+   public static Agent Raze()
+   {
+      Agent raze = new Agent ("Raze","Brazil",role[3],classic,AbilityMain.raze(),false);
+      return raze;
+   }
+
+   public static Agent Breach()
+   {
+      Agent breach = new Agent ("Breach","Sweden",role[2],classic,AbilityMain.breach(),false);
+      return breach;
+   }
+
+   public static Agent Skye()
+   {
+      Agent skye = new Agent ("Skye","Australia",role[2],classic,AbilityMain.skye(),false);
+      return skye;
+   }
+
+   public static Agent Yoru()
+   {
+      Agent yoru = new Agent ("Yoru","Japan",role[2],classic,AbilityMain.yoru(),false);
+      return yoru;
+   }
+
+   /*
+   public static Agent KAYO()
+   {
+      Agent kayo = new Agent ("KAY/O","Alternate",role[2],classic,AbilityMain.kayo(),false);
+      return kayo;
+   }
+   */
+
+   public static Agent Chamber()
+   {
+     Agent chamber = new Agent ("Chamber","France",role[1],classic,AbilityMain.chamber(),false);
+     return chamber;
+   }
+
+   public static Agent Neon()
+   {
+     Agent neon = new Agent ("Neon","Philippines",role[3],classic,AbilityMain.neon(),false);
+     return neon;
+   }
+
+   public static Agent Fade()
+   {
+     Agent fade = new Agent ("Fade","Turkey",role[2],classic,AbilityMain.fade(),false);
+     return fade;
+   }
 }
