@@ -1,4 +1,3 @@
-/**
  * Names: Bonny Chen 
  * Date: May 2nd, 2022 
  * Description: Class to call the Maps
@@ -18,7 +17,19 @@ public class MapMain {
 		
 		Map fracture = new Map("Fracture", false, true, false, true, false, false, false, true);
 		System.out.println(fracture.toString());
-
+		
+		Map icebox = new Map("Icebox", false, true, false, true, false, false, false, false);
+		System.out.println(icebox.toString());
+		
+		Map breeze = new Map("Breeze", false, false, false, true, false, true, true, false);
+		System.out.println(breeze.toString());
+		
+	   	Map bind = new Map("Bind", true, false, false, false, false, false, false, false);
+	    	System.out.println(bind.toString());
+	  	  
+	    	Map split = new Map("Split", false, false, true, true, false, false, false, false);
+	    	System.out.println(split.toString());
+	    
 	}
 
 }
