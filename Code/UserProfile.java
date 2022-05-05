@@ -13,7 +13,7 @@ public class UserProfile {
     private String username;
 
     /** The agent the player is playing */
-    private Agents agent;
+    private Agent agent;
 
     /** PlayerProfiles which is friends with this player */
     ArrayList<UserProfile> friends; // This is an arraylist which just mean that the array is resizable
@@ -21,21 +21,32 @@ public class UserProfile {
     /**
      * Constructor with username
      * 
-     * @param username the name of the user
-     * @param agent    the agent the user is playing
+     * @param username  the name of the user
+     * @param agent     the agent the user is playing
+     * @param inventory the inventory of the profile
      */
-    public UserProfile(String username, Agents agent) {
+    public UserProfile(String username, Agent agent, Inventory inventory) {
         if (username.length() < 3) {
+
             System.out.println("Name cannot be smaller than 3 characters.");
+
         } else if (username.length() > 16) {
+
             System.out.println("Name cannot be bigger than 16 characters.");
+
         } else {
+
             this.username = username;
+
         }
+
         this.agent = agent;
+
     }
 
-    // methods
+    /*
+     * Methods
+     */
 
     /**
      * This method searches for a friend
@@ -44,22 +55,30 @@ public class UserProfile {
      * @return friend the profile of the friend
      */
     public UserProfile getFriend(String friendName) {
+
         String curr;
         for (int i = 0; i < friends.size(); i++) {
+
             curr = this.friends.get(i).getUsername();
+
             if (curr.equals(friendName)) {
+
                 return this.friends.get(i);
+
             }
+
         }
+
         System.out.println("No player found");
         return null;
+
     }
 
     public void addFriend(String friendName) {
 
     }
 
-    // getters
+    // Accessor Methods
 
     /**
      * This method returns the user name of the player
@@ -67,7 +86,9 @@ public class UserProfile {
      * @return username the name of the player
      */
     public String getUsername() {
+
         return this.username;
+
     }
 
     /**
@@ -76,25 +97,35 @@ public class UserProfile {
      * @return friends the user's list of friends
      */
     public ArrayList<UserProfile> getFriends() {
+
         return this.friends;
+
     }
 
-    // setters
+    // Mutator Methods
 
     /**
      * This method sets the username for the user
-     * Username cannot be smaller than 3 or bigger than 6 characters
+     * Username cannot be smaller than 3 or bigger than 16 characters
      * 
      * @param username the username to be changed into
      */
     public void setUsername(String username) {
+
         if (username.length() < 3) {
+
             System.out.println("Name cannot be smaller than 3 characters.");
+
         } else if (username.length() > 16) {
+
             System.out.println("Name cannot be bigger than 16 characters.");
+
         } else {
+
             this.username = username;
+
         }
+
     }
 
     /**

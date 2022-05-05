@@ -1,8 +1,7 @@
 /**
  * Names: Bonny Chen
  * Date: April 28th, 2022
- * Description: The abilities class and all its attributes, accessors, and
- * mutator methods
+ * Description: The abilities class and all its attributes, accessors, and mutator methods
  */
 
 public class Ability {
@@ -40,6 +39,16 @@ public class Ability {
 
 	/** if the ability detects a presence */
 	private boolean detect;
+	
+	/** if the ability pulls enemies in */
+	private boolean pull;
+	
+	/** if the ability makes allie agents faster */
+	private boolean speed;
+	
+	/** if the ability is an ultimate */
+	private boolean isUltimate;
+	
 
 	/**
 	 * Constructor to create an ability
@@ -54,9 +63,12 @@ public class Ability {
 	 * @param decay:      if it decays
 	 * @param vulnerable: if it can make enemies vulnerable
 	 * @param detect:     if it can detects enemies
+	 * @param pull: 	  if it can pull enemies
+	 * @param speed: 	  if it increase allies speed
+	 * @param isUltimate: if this ability is an ultimate
 	 */
 	public Ability(String name, int cost, int damage, int amount, boolean blind, boolean slow, boolean concuss,
-			boolean decay, boolean vulnerable, boolean detect) {
+			boolean decay, boolean vulnerable, boolean detect, boolean pull, boolean speed, boolean isUltimate) {
 
 		this.name = name;
 		this.cost = cost;
@@ -68,6 +80,9 @@ public class Ability {
 		this.decay = decay;
 		this.vulnerable = vulnerable;
 		this.detect = detect;
+		this.pull = pull;
+		this.speed = speed;
+		this.isUltimate = isUltimate;
 
 	}
 
@@ -134,6 +149,24 @@ public class Ability {
 		return this.detect;
 
 	}
+	
+	public boolean getPull() {
+
+		return this.pull;
+
+	}
+	
+	public boolean getSpeed() {
+
+		return this.speed;
+
+	}
+	
+	public boolean getUltimate() {
+
+		return this.isUltimate;
+
+	}
 
 	/*
 	 * Methods
@@ -155,6 +188,23 @@ public class Ability {
 		}
 
 	}
+	
+	/**
+	 * Method to buy an ability
+	 * 
+	 * @param credits
+	 */
+	public void buyAbilities(int credits) { 
+		
+		credits =- this.cost;
+		
+		if (this.cost > credits) { 
+			
+			System.out.println("You don't have enough credits to purchase an ability");
+			
+		}	
+		
+	}
 
 	/**
 	 * Displays all the attributes of the ability in a String
@@ -175,7 +225,10 @@ public class Ability {
 		abilityString = abilityString + "Decays: " + this.decay + "\n";
 		abilityString = abilityString + "Enemies Vulnerable: " + this.vulnerable + "\n";
 		abilityString = abilityString + "Detects Enemies: " + this.detect + "\n";
-
+		abilityString = abilityString + "Pulls Enemies: " + this.pull + "\n";
+		abilityString = abilityString + "Speeds Allies: " + this.speed + "\n";
+		abilityString = abilityString + "Ultimate Ability: " + this.isUltimate + "\n";
+		
 		return abilityString;
 
 	}

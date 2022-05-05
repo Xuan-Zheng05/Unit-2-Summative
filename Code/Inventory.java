@@ -17,9 +17,6 @@ public class Inventory {
     /** The inventory of skins the user has */
     ArrayList<Skin> ownedSkins;
 
-    /** The associated profile this inventory belongs to */
-    UserProfile associatedUserProfile;
-
     // constructor
 
     /**
@@ -35,12 +32,11 @@ public class Inventory {
      * This is the constructor containing all the param needed for a complete
      * Inventory object
      * 
-     * @param valPoint              the amount of valorant points the user has
-     * @param radPoint              the amount of radiant points the user has
-     * @param ownedSkins            the skins the user owns
-     * @param associatedUserProfile the profile that owns this inventory
+     * @param valPoint   the amount of valorant points the user has
+     * @param radPoint   the amount of radiant points the user has
+     * @param ownedSkins the skins the user ownS
      */
-    public Inventory(int valPoint, int radPoint, ArrayList<Skin> ownedSkins, UserProfile associatedUserProfile) {
+    public Inventory(int valPoint, int radPoint, ArrayList<Skin> ownedSkins) {
         if (valPoint >= 0) {
             this.valPoint = valPoint;
         } else {
@@ -81,7 +77,4 @@ public class Inventory {
         return this.ownedSkins;
     }
 
-    public UserProfile getAssociatedUserProfile() {
-        return this.associatedUserProfile;
-    }
 }
