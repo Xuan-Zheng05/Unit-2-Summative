@@ -17,15 +17,17 @@ public class Skin {
 
     /**
      * Constructor for skin object
-     * @param name
-     * @param upgrade
-     * @param price
+     * @param name the name of the skin
+     * @param upgrade if the skin has been upgraded or not
+     * @param price the price of the skin in valorant points
      */
     public Skin(String name, boolean upgrade, int price) {
         this.name = name;
         this.upgrade = upgrade;
         this.price = price;
     }
+
+    //getters
 
     public String getName() {
 
@@ -43,6 +45,12 @@ public class Skin {
 
         return this.price;
 
+    }
+
+    //setters
+    
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String toString() {
