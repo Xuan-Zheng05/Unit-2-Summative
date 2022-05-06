@@ -4,10 +4,10 @@ import java.io.*;
 /**
  * Names: Bonny, Xuan, Yifei, Yuting
  * Date: May 3rd, 2022
- * Description: Main class demonstrating functionality of the entire 2nd sprint
+ * Description: Main class demonstrating functionality of the entire 3rd sprint
  */
 
-public class Sprint2Main {
+public class Sprint3Main {
 
     // Main testing method
     public static void main(String[] args) {
