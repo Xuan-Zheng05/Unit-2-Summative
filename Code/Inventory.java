@@ -17,6 +17,7 @@ public class Inventory {
     /** The inventory of skins the user has */
     ArrayList<Skin> ownedSkins;
 
+
     // constructor
 
     /**
@@ -32,9 +33,10 @@ public class Inventory {
      * This is the constructor containing all the param needed for a complete
      * Inventory object
      * 
-     * @param valPoint   the amount of valorant points the user has
-     * @param radPoint   the amount of radiant points the user has
-     * @param ownedSkins the skins the user ownS
+     * @param valPoint              the amount of valorant points the user has
+     * @param radPoint              the amount of radiant points the user has
+     * @param ownedSkins            the skins the user owns
+     * @param associatedUserProfile the profile that owns this inventory
      */
     public Inventory(int valPoint, int radPoint, ArrayList<Skin> ownedSkins) {
         if (valPoint >= 0) {
@@ -73,8 +75,62 @@ public class Inventory {
         return this.radPoint;
     }
 
+    /**
+     * return the array of owned skin
+     * @return
+     */
     public ArrayList<Skin> getOwnedSkin() {
         return this.ownedSkins;
     }
 
+    /**
+     * return the skin in a specific index in the inventory
+     * @param index
+     * @return
+     */
+    public Skin getOwnedSkin(int index){
+        return this.ownedSkins.get(index);
+    }
+
+
+    //setters
+
+    /**
+     * 
+     * @param valPoint
+     */
+    public void setValPoint(int valPoint) {
+        if (valPoint>= 0) {
+            this.valPoint = valPoint;
+        }
+    }
+
+    /**
+     * 
+     * @param radPoint
+     */
+    public void setRadPoint(int radPoint){
+        if(radPoint >=0){
+            this.radPoint = radPoint;
+        }
+    }
+
+    /**
+     * 
+     * @param skin
+     */
+    public void addSkin(Skin skin){
+        this.ownedSkins.add(skin);
+    }
+
+    /**
+     * 
+     * @param skin
+     */
+    public void removeSkin(Skin skin){
+        this.ownedSkins.remove(skin);
+    }
+
+
+    
 }
