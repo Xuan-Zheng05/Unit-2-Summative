@@ -12,7 +12,7 @@ public class Sprint3Main {
     // Main testing method
     public static void main(String[] args) {
 
-        // initalized GameModes
+        // initalized GameMode and Map for the current round
         GameMode[] gameModeList = GameModeMain.initialGameModes();
         System.out.println("The gamemode is " + gameModeList[(int) Math.floor(Math.random() * 5)].getName());
         Map[] mapList = MapMain.initalMaps();
@@ -33,18 +33,12 @@ public class Sprint3Main {
         Inventory nauxzdInventory = new Inventory(500, 25, nauxzdSkins);
         UserProfile nauxzd = new UserProfile("nauxzd", neon, nauxzdInventory);
 
-        // printed out abilites of agent
-        Ability[] abilities = neon.getAbility();
-        for (int i = 0; i < 4; i++) {
-
-            System.out.println(abilities[i].getName());
-
-        }
-
         System.out.println();
 
         // prints out all the attributes of a player
         System.out.println(nauxzd.toString());
+
+        neon.getGun().shoot(5);
 
     }
 

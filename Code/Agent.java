@@ -175,7 +175,7 @@ public class Agent {
     * @return the gun of the Agent
     */
 
-   public Gun gun() {
+   public Gun getGun() {
 
       return this.gun;
    }
@@ -211,11 +211,10 @@ public class Agent {
       this.gun = gun;
    }
 
-    public void buyWeapon (Gun gun)
-    {
-       this.gun = gun;
-       this.credits = this.credits - gun.getCost();
-    }
+   public void buyWeapon(Gun gun) {
+      this.gun = gun;
+      this.credits = this.credits - gun.getCost();
+   }
 
    /*
     * Methods
@@ -243,6 +242,21 @@ public class Agent {
          hasArmor = false;
       }
       return hasArmor;
+   }
+
+   /**
+    * Bullet hits agent, subtracts body dmg of gun from agentHp
+    * if agentHp reaches 0, print out (agentName) is dead
+    * 
+    * @param gun   the gun the bullet was shot from
+    * @param agent the agent that was hit
+    * @param times the number of times the agent of hit
+    */
+   public void bulletHit(Gun gun, Agent agent, int times) {
+      this.agentHp -= gun.getBodyDmg() * times;
+      if (agentHp <= 0) {
+         System.out.println(this.name + " is dead");
+      }
    }
 
    /**
