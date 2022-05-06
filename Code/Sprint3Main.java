@@ -15,6 +15,8 @@ public class Sprint3Main {
         // initalized GameModes
         GameMode[] gameModeList = GameModeMain.initialGameModes();
         System.out.println("The gamemode is " + gameModeList[(int) Math.floor(Math.random() * 5)].getName());
+        Map[] mapList = MapMain.initalMaps();
+        System.out.println("The Map is " + mapList[(int) Math.floor(Math.random() * 7)].getName());
 
         // initalized agent, skin, and gun
         Skin none = new Skin("None", false, 0);
