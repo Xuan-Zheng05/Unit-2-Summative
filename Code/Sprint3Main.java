@@ -40,6 +40,7 @@ public class Sprint3Main {
 
         System.out.println();
 
+        neon.getGun().changeSkin(reaverVandal);
         // prints out all the attributes of a player
         System.out.println(nauxzd.toString());
 

@@ -181,6 +181,16 @@ public class Gun {
     }
 
     /**
+     * changes the skin of the gun
+     * 
+     * @param skin the skin being bought
+     */
+
+    public void changeSkin(Skin skin) {
+        this.skin = skin;
+    }
+
+    /**
      * toString method
      * returns all the attributes of the gun in a String
      * 

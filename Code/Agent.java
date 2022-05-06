@@ -207,9 +207,21 @@ public class Agent {
     * Mutator
     */
 
+   /**
+    * changes the weapon of the agent
+    * 
+    * @param gun the gun being changed to
+    */
+
    public void changeWeapon(Gun gun) {
       this.gun = gun;
    }
+
+   /**
+    * agent buys a gun and credits are subtracted from the cost of the gun
+    * 
+    * @param gun the gun being bought
+    */
 
    public void buyWeapon(Gun gun) {
       this.gun = gun;
