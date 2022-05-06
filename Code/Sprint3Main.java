@@ -18,11 +18,16 @@ public class Sprint3Main {
         Map[] mapList = MapMain.initalMaps();
         System.out.println("The Map is " + mapList[(int) Math.floor(Math.random() * 7)].getName());
 
+        Gun[] initalGuns = GunMain.initalGuns();
+        Gun classic = initalGuns[0];
+        Gun spectre = initalGuns[1];
+        Gun phantom = initalGuns[2];
+        Gun vandal = initalGuns[3];
+        Gun operator = initalGuns[4];
+
         // initalized agent, skin, and gun
         Skin none = new Skin("None", false, 0);
         Skin reaverVandal = new Skin("Reaver Vandal", true, 1775);
-        Gun vandal = new Gun("Vandal", none, 2900, true, 2.5, 25, 25, 75, 9.75, 160, 40, 34);
-        Gun spectre = new Gun("spectre,", none, 1600, true, 2.25, 30, 30, 90, 13.33, 78, 26, 22);
         Agent neon = AgentMain.Neon();
         neon.changeWeapon(vandal);
         neon.buyWeapon(spectre);
