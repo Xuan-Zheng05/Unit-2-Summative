@@ -18,6 +18,16 @@ public class UserProfile {
     /** PlayerProfiles which is friends with this player */
     ArrayList<UserProfile> friends; // This is an arraylist which just mean that the array is resizable
 
+    /** The inventory of the user */
+    private Inventory userInventory;
+
+    /**
+     * Constructor with name
+     */
+    public UserProfile(String username){
+        this.username = username;
+    }
+
     /**
      * Constructor with username
      * 
@@ -25,7 +35,7 @@ public class UserProfile {
      * @param agent     the agent the user is playing
      * @param inventory the inventory of the profile
      */
-    public UserProfile(String username, Agent agent, Inventory inventory) {
+    public UserProfile(String username, Agent agent, Inventory userInventory) {
         if (username.length() < 3) {
 
             System.out.println("Name cannot be smaller than 3 characters.");
@@ -41,6 +51,8 @@ public class UserProfile {
         }
 
         this.agent = agent;
+
+        this.userInventory = userInventory;
 
     }
 
