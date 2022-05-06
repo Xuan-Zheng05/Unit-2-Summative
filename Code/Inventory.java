@@ -17,7 +17,6 @@ public class Inventory {
     /** The inventory of skins the user has */
     ArrayList<Skin> ownedSkins;
 
-
     // constructor
 
     /**
