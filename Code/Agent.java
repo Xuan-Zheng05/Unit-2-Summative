@@ -39,6 +39,11 @@ public class Agent {
    /** amount of credits the agent has */
    private int credits;
 
+   public Agent(){
+      
+   }
+
+   
    /**
     * Default Constructor with credis 0 at begining
     * 
