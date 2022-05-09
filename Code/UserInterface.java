@@ -49,16 +49,18 @@ public class UserInterface {
             }
 
             writeFile(fileName, playerProfile, ask);
-         } else if (newOrOld == 2) {
+         } 
+         else if (newOrOld == 2) 
+         {
             ask = false;
             // check returning player file and print stats
             UserProfile playerProfile = returningPlayer(playerName, ask);
-            if (ask = false) {
                System.out.println("Welcome back " + playerName + " Here is your current stats : ");
                System.out.println(playerProfile.toString());
-            }
 
-         } else {
+         } 
+         else 
+         {
             System.out.println("Please enter either 1 or 2 to continue, try again!");
          }
       } catch (InputMismatchException e) // if user did not enter integer
