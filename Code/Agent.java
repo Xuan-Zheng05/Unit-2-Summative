@@ -7,6 +7,10 @@
  * added comments
  * May.2.2022 - Rename the whole program to Agent, Add Hp and Armor check to
  * Attributes, fixed Comments
+ * May.3.2022 - added default constructor with 0 credits at begining, added change gun methods
+ * May.6.2022 - added method to buy weapon with credits
+ * May.8.2022 - added a defualt blank constructor, fixed comments
+ * May.9.2022 - fixed comments
  */
 
 public class Agent {
