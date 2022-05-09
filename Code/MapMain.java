@@ -1,8 +1,8 @@
-/*
-* Names: Bonny Chen 
-* Date: May 2nd, 2022 
-* Description: Class to call the Maps
-*/
+/**
+ * Names: Bonny Chen 
+ * Date: May 2nd, 2022 
+ * Description: Class to call the Maps
+ */
 
 import java.io.*;
 
@@ -13,6 +13,7 @@ public class MapMain {
 	}
 
 	public static Map[] initalMaps() {
+		
 		Map ascent = new Map("Ascent", false, false, false, false, false, true, false, false);
 		Map haven = new Map("Haven", false, false, false, false, true, false, false, false);
 		Map fracture = new Map("Fracture", false, true, false, true, false, false, false, true);
@@ -22,6 +23,7 @@ public class MapMain {
 		Map split = new Map("Split", false, false, true, true, false, false, false, false);
 		Map[] mapList = { ascent, haven, fracture, icebox, breeze, bind, split };
 		return mapList;
+		
 	}
 
 }
