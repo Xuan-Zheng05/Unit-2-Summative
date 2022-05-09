@@ -1,8 +1,8 @@
-/*
-* Names: Bonny Chen 
-* Date: May 2nd, 2022 
-* Description: Class to call the Maps
-*/
+/**
+ * Names: Bonny Chen 
+ * Date: May 2nd, 2022 
+ * Description: Class to call the Maps
+ */
 
 import java.io.*;
 
