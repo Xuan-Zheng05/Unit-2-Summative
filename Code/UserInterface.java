@@ -8,30 +8,51 @@ import java.io.*;
  */
 
  public class UserInterface
- {
+   {
     int newOrOld;
 
-     public static void newOrOld (int newOrOld, String playerName)
+     public static boolean newOrOld (int newOrOld, String playerName, boolean ask)
      {
       String fileName = playerName + ".txt";
-      int printChecker;
-      String AgentChoice = " ";
-      Scanner sc = new Scanner(System.in); 
+      int AgentChoice = 0;
 
+      Scanner sc = new Scanner(System.in); 
          try{
             if (newOrOld == 1)
             {
-               System.out.println("Looks like you are new to the game, do you want to choose your first agent from the five default agents?");
-               System.out.println("Please choose between Brimstone, Jett, Phoenix, Sage, and Sova"); //this part doesnt really work yet
-               AgentChoice = sc.nextLine();
+               ask = false;
                //create the file 
                UserProfile playerProfile = new UserProfile(playerName);
-               writeFile(fileName,playerProfile);
+               System.out.println("Looks like you are new to the game, do you want to choose your first agent from the five default agents?");
+               System.out.println("Please choose between [1]Brimstone, [2]Jett, [3]Phoenix, [4]Sage, and [5]Sova"); //this part doesnt really work yet
+               AgentChoice = sc.nextInt();
+               if (AgentChoice == 1)
+               {
+                  playerProfile.changeAgent(AgentMain.BrimeStone());
+               }
+               else if (AgentChoice == 2)
+               {
+                  playerProfile.changeAgent(AgentMain.Jett());
+               }
+               else if (AgentChoice == 3)
+               {
+                  playerProfile.changeAgent(AgentMain.Phoneix()); 
+               }
+               else if (AgentChoice == 4)
+               {
+                  playerProfile.changeAgent(AgentMain.Sage());
+               }
+               else if (AgentChoice == 5)
+               {
+                  playerProfile.changeAgent(AgentMain.Sova());
+               }
+               writeFile(fileName,playerProfile,ask);
             }
             else if (newOrOld == 2)
             {
+               ask = false;
                //check returning player file and print stats
-               UserProfile playerProfile = returningPlayer(playerName);
+               UserProfile playerProfile = returningPlayer(playerName,ask);
                System.out.println("Welcome back "+playerName+ " Here is your current stats : "); 
                System.out.println(playerProfile.toString());     
             }
@@ -43,10 +64,11 @@ import java.io.*;
          catch (InputMismatchException e) //if user did not enter integer
          {
             System.out.println("You have entered invalid input, try again!"); 
+            ask = true;
          }
-     } 
-
-     public static void writeFile (String name, UserProfile playerProfile)
+      return ask;
+   }
+     public static void writeFile (String name, UserProfile playerProfile,boolean ask)
      {
         try
         {
@@ -61,16 +83,15 @@ import java.io.*;
         catch (IOException e)
         {
            System.out.println("There was a problem creating the file, please try again");
+           ask = false;
         }
      }
 
-     public static UserProfile returningPlayer (String name)
+     public static UserProfile returningPlayer (String name, boolean ask)
      {
-        // Create a file  using a file reader
-        Scanner statsFs = new Scanner(System.in); 
+        // Create a file  using a file buffered reader 
         String lineIn;
         String fileName = name + ".txt";
-        int lineInt;
         UserProfile playerProfile = new UserProfile(name);
         Inventory playerInventory = new Inventory();
         BufferedReader inputIn;
@@ -92,11 +113,13 @@ import java.io.*;
         catch (NumberFormatException e) 
         {
            System.out.println("There was a problem with collecting the values, please try again.");
+           ask = true;
         }
         
         catch (IOException e)
         {
            System.out.println("The file is not found, make sure the name you entered was correct");
+           ask = true;
         }
 
       return playerProfile;
