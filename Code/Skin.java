@@ -51,6 +51,15 @@ public class Skin {
         this.name = name;
     }
 
+    /**
+     * return a default skin for testing
+     * @return
+     */
+    public static Skin getDefaultSkin(){
+        Skin DSkin = new Skin("DSkin", false, 100);
+        return DSkin;
+    }
+
     public String toString() {
 
         String skinString = "";

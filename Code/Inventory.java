@@ -8,10 +8,10 @@ import java.util.ArrayList;
  */
 public class Inventory {
 
-    /** The amount of valorant points the user has */
+    /** The amount of valorant points the user has, valPoint is used to purchase skins*/
     int valPoint;
 
-    /** The amount of radiant points the user has */
+    /** The amount of radiant points the user has, radPoint is used to upgrade skins */
     int radPoint;
 
     /** The inventory of skins the user has */
@@ -35,7 +35,7 @@ public class Inventory {
      * @param valPoint              the amount of valorant points the user has
      * @param radPoint              the amount of radiant points the user has
      * @param ownedSkins            the skins the user owns
-     * @param associatedUserProfile the profile that owns this inventory
+     * 
      */
     public Inventory(int valPoint, int radPoint, ArrayList<Skin> ownedSkins) {
         if (valPoint >= 0) {
@@ -115,16 +115,24 @@ public class Inventory {
     }
 
     /**
-     * 
-     * @param skin
+     * This method adds a skin to the inventory, if the inventory has enought valpoints
+     * @param skin the skin to be added
      */
     public void addSkin(Skin skin){
-        this.ownedSkins.add(skin);
+
+        if (this.valPoint >= skin.getPrice()) {
+            this.ownedSkins.add(skin);
+            this.valPoint = this.valPoint - skin.getPrice();
+            System.out.println("Skin has been added");
+        }else{
+            System.out.println("Skin has not been added");
+        }
+        
     }
 
     /**
-     * 
-     * @param skin
+     * removes the skin from this inventory
+     * @param skin the skin to be removed
      */
     public void removeSkin(Skin skin){
         this.ownedSkins.remove(skin);

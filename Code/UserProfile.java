@@ -147,6 +147,7 @@ public class UserProfile {
 
             if (curr.equals(friendName)) {
 
+                System.out.println("Found friend");
                 return this.friends.get(i);
 
             }
@@ -158,8 +159,11 @@ public class UserProfile {
 
     }
 
-    public void addFriend(String friendName) {
-
+    /**
+     * 
+     */
+    public void addFriend(UserProfile userProfile) {
+        this.friends.add(userProfile);
     }
 
     // Accessor Methods
