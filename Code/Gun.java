@@ -173,8 +173,8 @@ public class Gun {
 
         } else {
 
+            this.reserve -= magazineSize - magazine;
             this.magazine = magazineSize;
-            this.reserve -= magazineSize;
 
         }
 
