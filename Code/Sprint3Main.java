@@ -1,11 +1,18 @@
-import java.util.*;
-import java.io.*;
 
 /**
+ ____   ____  _       _____       ___   _______          _       ____  _____  _________  
+|_  _| |_  _|/ \     |_   _|    .'   `.|_   __ \        / \     |_   \|_   _||  _   _  | 
+  \ \   / / / _ \      | |     /  .-.  \ | |__) |      / _ \      |   \ | |  |_/ | | \_| 
+   \ \ / / / ___ \     | |   _ | |   | | |  __ /      / ___ \     | |\ \| |      | |     
+    \ ' /_/ /   \ \_  _| |__/ |\  `-'  /_| |  \ \_  _/ /   \ \_  _| |_\   |_    _| |_    
+     \_/|____| |____||________| `.___.'|____| |___||____| |____||_____|\____|  |_____|    .java
+ * 
  * Names: Bonny, Xuan, Yifei, Yuting
  * Date: May 3rd, 2022
  * Description: Main class demonstrating functionality of the entire 3rd sprint
  */
+import java.util.*;
+import java.io.*;
 
 public class Sprint3Main {
 
