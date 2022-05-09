@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**
  * Name: Xuan
  * Date: 04/28/2022
@@ -173,21 +175,39 @@ public class Gun {
 
         } else {
 
+            this.reserve -= magazineSize - magazine;
             this.magazine = magazineSize;
-            this.reserve -= magazineSize;
 
         }
 
     }
 
     /**
-     * changes the skin of the gun
+     * changes the skin of the gun by getting all the skins of the user profile and
+     * checking if the skin is in the user inventory
      * 
-     * @param skin the skin being bought
+     * this is the method dependant on the skin class I did and is dependant on the
+     * userProfile class
+     * 
+     * @param skin    the skin being bought
+     * @param profile the profile of the player changing their skin
      */
 
-    public void changeSkin(Skin skin) {
-        this.skin = skin;
+    public void changeSkin(Skin skin, UserProfile profile) {
+        ArrayList<Skin> list = profile.getInventory().getOwnedSkin();
+
+        // loops through the arraylist to check if the skin is there
+        boolean hasSkin = false;
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i).equals(skin)) {
+                hasSkin = true;
+            }
+        }
+
+        // is the skin is in the inventory, change the skin
+        if (hasSkin) {
+            this.skin = skin;
+        }
     }
 
     /**

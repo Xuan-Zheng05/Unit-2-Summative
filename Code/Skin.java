@@ -1,7 +1,8 @@
 /**
  * Name: Xuan
  * Date: 05/02/2022
- * this is an example of a skin that can be applied to a gun
+ * Description: A program that houses the Skin class and all its attributes,
+ * accessors, mutators, and other methods.
  */
 
 public class Skin {
@@ -17,17 +18,16 @@ public class Skin {
 
     /**
      * Constructor for skin object
-     * @param name the name of the skin
+     * 
+     * @param name    the name of the skin
      * @param upgrade if the skin has been upgraded or not
-     * @param price the price of the skin in valorant points
+     * @param price   the price of the skin in valorant points
      */
     public Skin(String name, boolean upgrade, int price) {
         this.name = name;
         this.upgrade = upgrade;
         this.price = price;
     }
-
-    //getters
 
     public String getName() {
 
@@ -47,8 +47,6 @@ public class Skin {
 
     }
 
-    //setters
-    
     public void setName(String name) {
         this.name = name;
     }
@@ -63,5 +61,5 @@ public class Skin {
         return skinString;
 
     }
-    
+
 }
