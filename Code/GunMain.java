@@ -5,7 +5,6 @@
 * Description: Main class demonstrating functionality of the Gun class
 */
 
-import java.util.*;
 import java.io.*;
 
 public class GunMain {
@@ -27,6 +26,7 @@ public class GunMain {
 
     }
 
+    // initalized all of the gun to use in main
     public static Gun[] initalGuns() {
         Skin none = new Skin("None", false, 0);
         Gun classic = new Gun("Classic", none, 0, false, 1.75, 12, 12, 36, 6.75, 78, 26, 22);
