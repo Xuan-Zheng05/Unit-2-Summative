@@ -85,7 +85,7 @@ public class UserProfile {
 
         this.agent = agent;
 
-        this.userInventory = userInventory;
+        this.userInventory = new Inventory();
 
     }
 
