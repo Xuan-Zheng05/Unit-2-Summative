@@ -28,7 +28,7 @@ public class UserProfile {
 
     UserSetting defaultSetting = new UserSetting();
 
-    public UserProfile(String username){
+    public UserProfile(String username) {
         if (username.length() < 3) {
 
             System.out.println("Name cannot be smaller than 3 characters.");
@@ -49,7 +49,7 @@ public class UserProfile {
     /**
      * Constructor with name, and a default agentchoice
      */
-    public UserProfile(String username, Agent AgentChoice){
+    public UserProfile(String username, Agent AgentChoice) {
         if (username.length() < 3) {
 
             System.out.println("Name cannot be smaller than 3 characters.");
@@ -100,9 +100,9 @@ public class UserProfile {
     /**
      * Constructor with username
      * 
-     * @param username  the name of the user
-     * @param agent     the agent the user is playing
-     * @param inventory the inventory of the profile
+     * @param username    the name of the user
+     * @param agent       the agent the user is playing
+     * @param inventory   the inventory of the profile
      * @param userSetting the usersetting of the profile
      */
     public UserProfile(String username, Agent agent, Inventory userInventory, UserSetting userSetting) {
@@ -181,13 +181,11 @@ public class UserProfile {
 
     }
 
-    public Inventory getInventory()
-    {
+    public Inventory getInventory() {
         return this.userInventory;
     }
 
-    public UserSetting getUserSetting()
-    {
+    public UserSetting getUserSetting() {
         return this.userSetting;
     }
 
@@ -210,20 +208,19 @@ public class UserProfile {
     }
 
     public void changeAgent(Agent newAgent) {
-        
+
         this.agent = newAgent;
 
     }
 
-    public void changeInventory(Inventory newInventory)
-    {
+    public void changeInventory(Inventory newInventory) {
         this.userInventory = newInventory;
     }
 
-    public void changeUserSetting(UserSetting newSetting)
-    {
+    public void changeUserSetting(UserSetting newSetting) {
         this.userSetting = newSetting;
     }
+
     /**
      * This method sets the username for the user
      * Username cannot be smaller than 3 or bigger than 16 characters
@@ -260,11 +257,11 @@ public class UserProfile {
 
         profileString = profileString + this.username + "\n";
         profileString = profileString + this.agent.getName().toString() + "\n";
-        profileString = profileString + this.getInventory().getRadPoint()+ "\n";
-        profileString = profileString + this.getInventory().getValPoint()+ "\n";
-        profileString = profileString + this.getUserSetting().getResolution()+ "\n";
-        profileString = profileString + this.getUserSetting().getVolume()+ "\n";
-        profileString = profileString + this.getUserSetting().getAspectRato()+ "\n";
+        profileString = profileString + this.getInventory().getRadPoint() + "\n";
+        profileString = profileString + this.getInventory().getValPoint() + "\n";
+        profileString = profileString + this.getUserSetting().getResolution() + "\n";
+        profileString = profileString + this.getUserSetting().getVolume() + "\n";
+        profileString = profileString + this.getUserSetting().getAspectRato() + "\n";
         return profileString;
 
     }
