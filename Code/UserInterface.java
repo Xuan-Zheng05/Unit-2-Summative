@@ -14,7 +14,7 @@ import java.io.*;
      public static boolean newOrOld (int newOrOld, String playerName, boolean ask)
      {
       String fileName = playerName + ".txt";
-      int AgentChoice = 0;
+      int AgentChoice = 0, settingChoice = 0;
 
       Scanner sc = new Scanner(System.in); 
          try{
@@ -23,8 +23,9 @@ import java.io.*;
                ask = false;
                //create the file 
                UserProfile playerProfile = new UserProfile(playerName);
+               UserSetting playerSetting = new UserSetting();
                System.out.println("Looks like you are new to the game, do you want to choose your first agent from the five default agents?");
-               System.out.println("Please choose between [1]Brimstone, [2]Jett, [3]Phoenix, [4]Sage, and [5]Sova"); //this part doesnt really work yet
+               System.out.println("Please choose between [1]Brimstone, [2]Jett, [3]Phoenix, [4]Sage, and [5]Sova");
                AgentChoice = sc.nextInt();
                if (AgentChoice == 1)
                {
@@ -46,6 +47,22 @@ import java.io.*;
                {
                   playerProfile.changeAgent(AgentMain.Sova());
                }
+
+               System.out.println("Looks like you are new to the game, do you want to use the [1]default user setting or [2]modify your self?");
+               settingChoice = sc.nextInt();
+               if (settingChoice == 1)
+               {
+                  playerProfile.chaneUserSetting(playerSetting);
+               }
+               else if (settingChoice == 2)
+               {
+                  playerProfile.chaneUserSetting(playerSetting); //not implemented yet
+               }
+               else
+               {
+                  System.out.println("Please enter either 1 or 2 to continue, try again!");
+               } 
+
                writeFile(fileName,playerProfile,ask);
             }
             else if (newOrOld == 2)
@@ -53,8 +70,12 @@ import java.io.*;
                ask = false;
                //check returning player file and print stats
                UserProfile playerProfile = returningPlayer(playerName,ask);
-               System.out.println("Welcome back "+playerName+ " Here is your current stats : "); 
-               System.out.println(playerProfile.toString());     
+               if(ask = false)
+               {
+                  System.out.println("Welcome back "+playerName+ " Here is your current stats : "); 
+                  System.out.println(playerProfile.toString());    
+               }
+ 
             }
             else
             {
@@ -94,6 +115,7 @@ import java.io.*;
         String fileName = name + ".txt";
         UserProfile playerProfile = new UserProfile(name);
         Inventory playerInventory = new Inventory();
+        UserSetting playerSetting = new UserSetting();
         BufferedReader inputIn;
         
         try
@@ -103,11 +125,19 @@ import java.io.*;
                playerProfile.changeUsername(lineIn);
                lineIn = inputIn.readLine();
                playerProfile.changeAgent(AgentMain.getAgent(lineIn));
-               lineIn = inputIn.readLine();
 
+               lineIn = inputIn.readLine();
                playerInventory.setValPoint(Integer.parseInt(lineIn));
                lineIn = inputIn.readLine();
                playerInventory.setRadPoint(Integer.parseInt(lineIn));
+               playerProfile.chaneUserSetting(playerSetting);
+
+               lineIn = inputIn.readLine();
+               playerSetting.changeResoulution(Integer.parseInt(lineIn));
+               lineIn = inputIn.readLine();
+               playerSetting.changeVolume(Integer.parseInt(lineIn));
+               lineIn = inputIn.readLine();
+               playerSetting.changeRatio(Double.parseDouble(lineIn));
                playerProfile.changeInventory(playerInventory);
         }
         catch (NumberFormatException e) 

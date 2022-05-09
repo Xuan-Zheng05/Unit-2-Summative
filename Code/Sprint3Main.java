@@ -17,26 +17,28 @@ import java.io.*;
 public class Sprint3Main {
 
     // Main testing method
-    public static void main(String[] args) {
+    public static void main(String[] args) 
+    {
 
         int newOrOld;
         String playerName = " ";         //find player's name;
         boolean ask = true;
         
         //Declare Scanner2
-        Scanner sc = new Scanner(System.in);  
-    do
-    {
-        try{
+        Scanner sc = new Scanner(System.in); 
+
         System.out.println();      //blank line for spacing
         System.out.print("Please enter your name: ");
         playerName =sc.nextLine();
 
-        System.out.println("\n| Welcome to Valorant | "+playerName);  
+        System.out.println("\n| Welcome to Valorant | "+playerName); 
 
+    do
+    {
+        try
+        { 
         System.out.println("are you a new player[1] or an old player[2]?");
         newOrOld = sc.nextInt();
-
         ask = UserInterface.newOrOld(newOrOld, playerName,ask);
         }
 
@@ -46,7 +48,8 @@ public class Sprint3Main {
             ask = true;
         }
     }while(ask);
-
+    
+        ask = true;
         sc.close();
         // initalized GameModes
         GameMode[] gameModeList = GameModeMain.initialGameModes();

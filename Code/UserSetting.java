@@ -52,7 +52,7 @@ public class UserSetting {
         }
 
         if (aspectRatio >= 4 / 3 || aspectRatio <= 21 / 9) {
-            this.resolution = resolution;
+            this.aspectRatio = aspectRatio;
         } else {
             this.aspectRatio = 16 / 9;
         }
@@ -87,6 +87,33 @@ public class UserSetting {
 
     public boolean getIsFullScreen() {
         return this.isFullScreen;
+    }
+
+    public void changeResoulution (int newResoulution)
+    {
+        if (newResoulution >= 720 || newResoulution <= 2160) {
+            this.resolution = newResoulution;
+        } else {
+            this.resolution = 720;
+        }
+    }
+
+    public void changeVolume (int newVolume)
+    {
+        if (newVolume <= 0 || newVolume >= 100) {
+            this.volume = newVolume;
+        } else {
+            this.volume = 100;
+        }
+    }
+
+    public void changeRatio (Double newRatio)
+    {
+        if (newRatio >= 4 / 3 || newRatio <= 21 / 9) {
+            this.aspectRatio = newRatio;
+        } else {
+            this.aspectRatio = 16 / 9;
+        }
     }
 
 }

@@ -15,6 +15,9 @@ public class UserProfile {
     /** The agent the player is playing */
     private Agent agent;
 
+    /** The UserSetting the player is using */
+    private UserSetting userSetting;
+
     /** PlayerProfiles which is friends with this player */
     ArrayList<UserProfile> friends; // This is an arraylist which just mean that the array is resizable
 
@@ -22,6 +25,8 @@ public class UserProfile {
     private Inventory userInventory;
 
     Inventory defaulInventory = new Inventory();
+
+    UserSetting defaultSetting = new UserSetting();
 
     public UserProfile(String username){
         if (username.length() < 3) {
@@ -36,8 +41,9 @@ public class UserProfile {
 
             this.username = username;
         }
-        this.agent = AgentMain.Neon();
+        this.agent = AgentMain.nullAgent();
         this.userInventory = defaulInventory;
+        this.userSetting = defaultSetting;
     }
 
     /**
@@ -59,6 +65,7 @@ public class UserProfile {
 
         this.agent = AgentChoice;
         this.userInventory = defaulInventory;
+        this.userSetting = defaultSetting;
     }
 
     /**
@@ -86,6 +93,38 @@ public class UserProfile {
         this.agent = agent;
 
         this.userInventory = userInventory;
+
+        this.userSetting = defaultSetting;
+    }
+
+    /**
+     * Constructor with username
+     * 
+     * @param username  the name of the user
+     * @param agent     the agent the user is playing
+     * @param inventory the inventory of the profile
+     * @param userSetting the usersetting of the profile
+     */
+    public UserProfile(String username, Agent agent, Inventory userInventory, UserSetting userSetting) {
+        if (username.length() < 3) {
+
+            System.out.println("Name cannot be smaller than 3 characters.");
+
+        } else if (username.length() > 16) {
+
+            System.out.println("Name cannot be bigger than 16 characters.");
+
+        } else {
+
+            this.username = username;
+
+        }
+
+        this.agent = agent;
+
+        this.userInventory = userInventory;
+
+        this.userSetting = userSetting;
 
     }
 
@@ -147,6 +186,11 @@ public class UserProfile {
         return this.userInventory;
     }
 
+    public UserSetting getUserSetting()
+    {
+        return this.userSetting;
+    }
+
     /**
      * This method return the user's friendlist
      * 
@@ -176,6 +220,10 @@ public class UserProfile {
         this.userInventory = newInventory;
     }
 
+    public void chaneUserSetting(UserSetting newSetting)
+    {
+        this.userSetting = newSetting;
+    }
     /**
      * This method sets the username for the user
      * Username cannot be smaller than 3 or bigger than 16 characters
@@ -214,6 +262,9 @@ public class UserProfile {
         profileString = profileString + this.agent.getName().toString() + "\n";
         profileString = profileString + this.getInventory().getRadPoint()+ "\n";
         profileString = profileString + this.getInventory().getValPoint()+ "\n";
+        profileString = profileString + this.getUserSetting().getResolution()+ "\n";
+        profileString = profileString + this.getUserSetting().getVolume()+ "\n";
+        profileString = profileString + this.getUserSetting().getAspectRato()+ "\n";
         return profileString;
 
     }
