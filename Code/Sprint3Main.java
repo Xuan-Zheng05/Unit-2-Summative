@@ -19,7 +19,26 @@ public class Sprint3Main {
     // Main testing method
     public static void main(String[] args) {
 
-        // initalized GameMode and Map for the current round
+        int newOrOld;
+        String playerName = " ";         //find player's name;
+        boolean ask = true;
+        
+        //Declare Scanner2
+        Scanner sc = new Scanner(System.in);  
+
+        System.out.println();      //blank line for spacing
+        System.out.print("Please enter your name: ");
+        playerName =sc.nextLine();
+
+        System.out.println("\n| Welcome to Valorant |"+playerName);  
+
+        System.out.println("are you a new player[1] or an old player[2]?");
+        newOrOld = sc.nextInt();
+
+        UserInterface.newOrOld(newOrOld, playerName);
+        
+        sc.close();
+        // initalized GameModes
         GameMode[] gameModeList = GameModeMain.initialGameModes();
         System.out.println("The gamemode is " + gameModeList[(int) Math.floor(Math.random() * 5)].getName());
         Map[] mapList = MapMain.initalMaps();
@@ -44,14 +63,6 @@ public class Sprint3Main {
         nauxzdSkins.add(reaverVandal);
         Inventory nauxzdInventory = new Inventory(500, 25, nauxzdSkins);
         UserProfile nauxzd = new UserProfile("nauxzd", neon, nauxzdInventory);
-
-        System.out.println();
-
-        neon.getGun().changeSkin(reaverVandal);
-        // prints out all the attributes of a player
-        System.out.println(nauxzd.toString());
-
-        neon.getGun().shoot(5);
 
     }
 

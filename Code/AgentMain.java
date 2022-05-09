@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**
  * Name: Yifei
  * Date: 04/28/2022
@@ -11,6 +13,10 @@ public class AgentMain {
    static Gun classic = new Gun("classic", none, 0, false, 1.75, 12, 12, 36, 6.75, 78, 26, 22);
    static String[] role = Agent.getRoleArray(); /* "Controller", "Sentinel", "Initiator", "Duelist"*/
 
+   public static Agent nullAgent(){
+      Agent nullAgent = new Agent();
+      return nullAgent;
+   }
    public static Agent Astra() {
    
       Agent astra = new Agent ("Astra","Ghana",role[0],classic,AbilityMain.astra(),false);
@@ -144,5 +150,27 @@ public class AgentMain {
      return fade;
      
    }
+   public static Agent[] List()
+   {
+      Agent[] AgentList = new Agent[]{Astra(),BrimeStone(),Viper(),Cypher(),Sova(),Sage(),Phoneix(),Jett(),Reyna(),Raze(),Breach(),Skye(),Yoru(),KAYO(),Chamber(),Neon(),Fade()};
+      return AgentList;
+   }
+
+   public static Agent getAgent(String agentName) {
+      
+      String curr;
+      Agent[] currAgent = {Astra()};
+      Agent[] AgentList = AgentMain.List();
+        for (int i = 0; i < AgentList.length; i++) {
+
+            curr = AgentList[i].getName();
+
+            if (curr.equals(agentName)) {
+               currAgent[0] = AgentList[i];
+            }
+        }
+
+        return currAgent[0];
+  }
    
 }

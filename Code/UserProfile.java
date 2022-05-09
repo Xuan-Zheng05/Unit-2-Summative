@@ -21,11 +21,44 @@ public class UserProfile {
     /** The inventory of the user */
     private Inventory userInventory;
 
-    /**
-     * Constructor with name
-     */
+    Inventory defaulInventory = new Inventory();
+
     public UserProfile(String username){
-        this.username = username;
+        if (username.length() < 3) {
+
+            System.out.println("Name cannot be smaller than 3 characters.");
+
+        } else if (username.length() > 16) {
+
+            System.out.println("Name cannot be bigger than 16 characters.");
+
+        } else {
+
+            this.username = username;
+        }
+        this.agent = AgentMain.Neon();
+        this.userInventory = defaulInventory;
+    }
+
+    /**
+     * Constructor with name, and a default agentchoice
+     */
+    public UserProfile(String username, Agent AgentChoice){
+        if (username.length() < 3) {
+
+            System.out.println("Name cannot be smaller than 3 characters.");
+
+        } else if (username.length() > 16) {
+
+            System.out.println("Name cannot be bigger than 16 characters.");
+
+        } else {
+
+            this.username = username;
+        }
+
+        this.agent = AgentChoice;
+        this.userInventory = defaulInventory;
     }
 
     /**
@@ -103,6 +136,17 @@ public class UserProfile {
 
     }
 
+    public Agent getAgent() {
+
+        return this.agent;
+
+    }
+
+    public Inventory getInventory()
+    {
+        return this.userInventory;
+    }
+
     /**
      * This method return the user's friendlist
      * 
@@ -115,6 +159,22 @@ public class UserProfile {
     }
 
     // Mutator Methods
+    public void changeUsername(String newplayerName) {
+
+        this.username = newplayerName;
+
+    }
+
+    public void changeAgent(Agent newAgent) {
+        
+        this.agent = newAgent;
+
+    }
+
+    public void changeInventory(Inventory newInventory)
+    {
+        this.userInventory = newInventory;
+    }
 
     /**
      * This method sets the username for the user
@@ -150,9 +210,10 @@ public class UserProfile {
 
         String profileString = "";
 
-        profileString = profileString + "Profile: " + this.username + "\n";
-        profileString = profileString + agent.toString();
-
+        profileString = profileString + this.username + "\n";
+        profileString = profileString + this.agent.getName().toString() + "\n";
+        profileString = profileString + this.getInventory().getRadPoint()+ "\n";
+        profileString = profileString + this.getInventory().getValPoint()+ "\n";
         return profileString;
 
     }
