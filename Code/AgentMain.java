@@ -1,5 +1,3 @@
-
-
 /**
  * Name: Yifei
  * Date: 04/28/2022
@@ -14,9 +12,12 @@ public class AgentMain {
    static String[] role = Agent.getRoleArray(); /* "Controller", "Sentinel", "Initiator", "Duelist"*/
 
    public static Agent nullAgent(){
+	   
       Agent nullAgent = new Agent();
       return nullAgent;
+      
    }
+   
    public static Agent Astra() {
    
       Agent astra = new Agent ("Astra","Ghana",role[0],classic,AbilityMain.astra(),false);
@@ -166,8 +167,11 @@ public class AgentMain {
             curr = AgentList[i].getName();
 
             if (curr.equals(agentName)) {
+            	
                currAgent[0] = AgentList[i];
+               
             }
+            
         }
 
         return currAgent[0];
@@ -182,9 +186,13 @@ public class AgentMain {
 
    Ability[] abilities = neon.getAbility();
    for (int i = 0; i < 4; i++) {
+	   
       System.out.println(abilities[i].getName());
+   
    }
+   
    System.out.println(neon.toString());
 
    }
+  
 }
