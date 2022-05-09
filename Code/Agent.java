@@ -39,7 +39,14 @@ public class Agent {
    /** amount of credits the agent has */
    private int credits;
 
-   public Agent(){
+
+
+    /*
+    * Default constructor
+    */
+
+   public Agent()
+   {
       
    }
 
@@ -231,6 +238,16 @@ public class Agent {
    public void buyWeapon(Gun gun) {
       this.gun = gun;
       this.credits = this.credits - gun.getCost();
+   }
+
+   /**
+    * set the agents credits to a new value
+    * 
+    * @param credis the new credits the agent will have 
+    */
+   public void changeCredit(int credits)
+   {
+      this.credits = credits;
    }
 
    /*
