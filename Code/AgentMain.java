@@ -172,5 +172,19 @@ public class AgentMain {
 
         return currAgent[0];
   }
-   
+
+  public static void main(String[] args) {
+
+   Gun vandal = new Gun("Vandal", none, 2900, true, 2.5, 30, 30, 90, 11, 156, 39, 33);
+   Agent neon = Neon();
+   neon.changeWeapon(vandal);
+   neon.buyWeapon(vandal);
+
+   Ability[] abilities = neon.getAbility();
+   for (int i = 0; i < 4; i++) {
+      System.out.println(abilities[i].getName());
+   }
+   System.out.println(neon.toString());
+
+   }
 }

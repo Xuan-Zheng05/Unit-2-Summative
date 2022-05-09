@@ -52,11 +52,11 @@ import java.io.*;
                settingChoice = sc.nextInt();
                if (settingChoice == 1)
                {
-                  playerProfile.chaneUserSetting(playerSetting);
+                  playerProfile.changeUserSetting(playerSetting);
                }
                else if (settingChoice == 2)
                {
-                  playerProfile.chaneUserSetting(playerSetting); //not implemented yet
+                  playerProfile.changeUserSetting(playerSetting); //not implemented yet
                }
                else
                {
@@ -130,7 +130,7 @@ import java.io.*;
                playerInventory.setValPoint(Integer.parseInt(lineIn));
                lineIn = inputIn.readLine();
                playerInventory.setRadPoint(Integer.parseInt(lineIn));
-               playerProfile.chaneUserSetting(playerSetting);
+               playerProfile.changeUserSetting(playerSetting);
 
                lineIn = inputIn.readLine();
                playerSetting.changeResoulution(Integer.parseInt(lineIn));
