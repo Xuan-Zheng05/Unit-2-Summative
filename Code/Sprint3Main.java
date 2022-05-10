@@ -61,12 +61,11 @@ public class Sprint3Main {
         Gun vandal = initalGuns[3];
         Gun operator = initalGuns[4];
 
-        // initalized agent, skin, and gun
-        Skin none = new Skin("None", false, 0);
+        // initalized 1st agent, skin, and gun
         Skin reaverVandal = new Skin("Reaver Vandal", true, 1775);
         Agent neon = AgentMain.Neon();
-        neon.changeWeapon(vandal);
         neon.buyWeapon(spectre);
+        neon.changeWeapon(vandal);
 
         // initalized skins array, inventory, and skins for one user
         ArrayList<Skin> nauxzdSkins = new ArrayList<>();
@@ -74,6 +73,18 @@ public class Sprint3Main {
         Inventory nauxzdInventory = new Inventory(500, 25, nauxzdSkins);
         UserProfile nauxzd = new UserProfile("nauxzd", neon, nauxzdInventory);
 
-    }
+        // changes skin of the gun
+        neon.getGun().changeSkin(reaverVandal, nauxzd);
 
+        // initalize 2nd agent. userprofile, and gun with default skin
+        Skin none = new Skin("None", false, 0);
+        Agent viper = AgentMain.Viper();
+        viper.buyWeapon(phantom);
+
+        ArrayList<Skin> yifeiSkins = new ArrayList<>();
+        Inventory yifeiInventory = new Inventory(500, 25, yifeiSkins);
+        UserProfile yifei = new UserProfile("nauxzd", neon, yifeiInventory);
+
+        // game start
+    }
 }

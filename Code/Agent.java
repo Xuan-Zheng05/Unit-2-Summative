@@ -7,7 +7,8 @@
  * added comments
  * May.2.2022 - Rename the whole program to Agent, Add Hp and Armor check to
  * Attributes, fixed Comments
- * May.3.2022 - added default constructor with 0 credits at begining, added change gun methods
+ * May.3.2022 - added default constructor with 0 credits at begining, added
+ * change gun methods
  * May.6.2022 - added method to buy weapon with credits
  * May.8.2022 - added a defualt blank constructor, fixed comments
  * May.9.2022 - fixed comments
@@ -43,18 +44,14 @@ public class Agent {
    /** amount of credits the agent has */
    private int credits;
 
-
-
-    /*
+   /*
     * Default constructor
     */
 
-   public Agent()
-   {
-      
+   public Agent() {
+
    }
 
-   
    /**
     * Default Constructor with credis 0 at begining
     * 
@@ -79,7 +76,7 @@ public class Agent {
       } else {
          this.agentHp = 100;
       }
-      this.credits = 0;
+      this.credits = 3000;
    }
 
    /**
@@ -247,10 +244,9 @@ public class Agent {
    /**
     * set the agents credits to a new value
     * 
-    * @param credis the new credits the agent will have 
+    * @param credis the new credits the agent will have
     */
-   public void changeCredit(int credits)
-   {
+   public void changeCredit(int credits) {
       this.credits = credits;
    }
 
