@@ -1,7 +1,7 @@
 
 /**
  * This is the player profile class, contains information about the player
- * @author Yuting Hou
+ * @author Yuting Hou,Yifei Qi
  * 4/28/2022
  */
 

@@ -159,6 +159,12 @@ public class Agent {
 
    }
 
+   /**
+    * Gets all the type of the agent
+    * 
+    * @return all the type of the Agent
+    */
+
    static public String[] getRoleArray() {
       return role.clone();
    }
