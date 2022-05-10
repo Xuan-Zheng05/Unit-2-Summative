@@ -88,6 +88,11 @@ public class Sprint3Main {
 
         // neon shoots gun 3 times
         neon.getGun().shoot(6);
+        // hit 3 times
+        viper.bulletHit(neon.getGun(), neon, 3);
+        System.out.println("Viper's current hp is" + viper.getAgentHp());
 
+        viper.getGun().shoot(10);
+        neon.bulletHit(viper.getGun(), viper, 5);
     }
 }

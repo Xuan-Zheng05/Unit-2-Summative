@@ -53,6 +53,11 @@ public class Skin {
         this.name = name;
     }
 
+    public static Skin getDefaultSkin() {
+        Skin DSkin = new Skin("DSkin", false, 100);
+        return DSkin;
+    }
+
     /**
      * buys a skin and adds it to the user profile
      * 
@@ -70,7 +75,6 @@ public class Skin {
             skinList.add(skin);
             profile.getInventory().addSkin(skinList);
         }
-
     }
 
     public String toString() {
