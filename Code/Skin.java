@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**
  * Name: Xuan
  * Date: 05/02/2022
@@ -52,12 +54,23 @@ public class Skin {
     }
 
     /**
-     * return a default skin for testing
-     * @return
+     * buys a skin and adds it to the user profile
+     * 
+     * method dependant on the UserProfile class that a groupmate made
+     * 
+     * @param skin    the skin being bought
+     * @param profile the user buying the skin
+     * 
      */
-    public static Skin getDefaultSkin(){
-        Skin DSkin = new Skin("DSkin", false, 100);
-        return DSkin;
+    public void buySkin(Skin skin, UserProfile profile) {
+
+        // checks if you can buy the skin with current amount of currency
+        if (profile.getInventory().getValPoint() >= this.price) {
+            ArrayList<Skin> skinList = profile.getInventory().getOwnedSkin();
+            skinList.add(skin);
+            profile.getInventory().addSkin(skinList);
+        }
+
     }
 
     public String toString() {
