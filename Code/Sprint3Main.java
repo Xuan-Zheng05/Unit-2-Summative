@@ -77,14 +77,17 @@ public class Sprint3Main {
         neon.getGun().changeSkin(reaverVandal, nauxzd);
 
         // initalize 2nd agent. userprofile, and gun with default skin
-        Skin none = new Skin("None", false, 0);
         Agent viper = AgentMain.Viper();
         viper.buyWeapon(phantom);
 
         ArrayList<Skin> yifeiSkins = new ArrayList<>();
         Inventory yifeiInventory = new Inventory(500, 25, yifeiSkins);
-        UserProfile yifei = new UserProfile("nauxzd", neon, yifeiInventory);
+        UserProfile yifei = new UserProfile("yifei", neon, yifeiInventory);
 
         // game start
+
+        // neon shoots gun 3 times
+        neon.getGun().shoot(6);
+
     }
 }
