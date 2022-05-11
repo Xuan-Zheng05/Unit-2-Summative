@@ -95,9 +95,9 @@ public class Gun {
 
     }
 
-    public String getSkin() {
+    public Skin getSkin() {
 
-        return this.skin.getName();
+        return this.skin;
 
     }
 

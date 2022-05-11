@@ -6,10 +6,17 @@
 */
 
 import java.io.*;
+import java.util.ArrayList;
 
 public class GunMain {
 
     public static void main(String[] args) throws IOException {
+
+        // initalizes test profile and test agent
+        Agent neon = AgentMain.Neon();
+        ArrayList<Skin> nauxzdSkins = new ArrayList<>();
+        Inventory nauxzdInventory = new Inventory(500, 25, nauxzdSkins);
+        UserProfile nauxzd = new UserProfile("nauxzd", neon, nauxzdInventory);
 
         // initalized gun with skin
         Skin none = new Skin("None", false, 0);
@@ -24,6 +31,9 @@ public class GunMain {
         // print out toString method
         System.out.println(vandal.toString());
 
+        // testing the changeSkin method
+        Skin primeVandal = new Skin("Prime Vandal", true, 1775);
+        vandal.changeSkin(primeVandal, nauxzd);
     }
 
     // initalized all of the gun to use in main
