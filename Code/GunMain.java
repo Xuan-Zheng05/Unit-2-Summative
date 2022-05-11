@@ -19,7 +19,7 @@ public class GunMain {
         UserProfile nauxzd = new UserProfile("nauxzd", neon, nauxzdInventory);
 
         // initalized gun with skin
-        Skin none = new Skin("None", false, 0);
+        Skin none = new Skin("None", "Default", false, 0);
         Gun vandal = new Gun("Vandal", none, 2900, true, 2.5, 25, 25, 75, 9.75, 160, 40, 34);
 
         // shoot gun 5 times and print new ammo
@@ -32,14 +32,14 @@ public class GunMain {
         System.out.println(vandal.toString());
 
         // testing the changeSkin method
-        Skin primeVandal = new Skin("Prime Vandal", true, 1775);
+        Skin primeVandal = new Skin("Prime Vandal", "Vandal", true, 1775);
         vandal.changeSkin(primeVandal, nauxzd);
 
     }
 
     // initalized all of the gun to use in main
     public static Gun[] initalGuns() {
-        Skin none = new Skin("None", false, 0);
+        Skin none = new Skin("None", "Default", false, 0);
         Gun classic = new Gun("Classic", none, 0, false, 1.75, 12, 12, 36, 6.75, 78, 26, 22);
         Gun spectre = new Gun("spectre,", none, 1600, true, 2.25, 30, 30, 90, 13.33, 78, 26, 22);
         Gun phantom = new Gun("Phantom", none, 2900, true, 2.5, 25, 25, 75, 9.75, 160, 40, 34);

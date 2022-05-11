@@ -12,6 +12,9 @@ public class Skin {
     /** The name of the skin */
     private String name;
 
+    /** The gun the skin can be applied to */
+    private String gunName;
+
     /** Has the skin been upgraded or not */
     private boolean upgrade;
 
@@ -25,8 +28,9 @@ public class Skin {
      * @param upgrade if the skin has been upgraded or not
      * @param price   the price of the skin in valorant points
      */
-    public Skin(String name, boolean upgrade, int price) {
+    public Skin(String name, String gunName, boolean upgrade, int price) {
         this.name = name;
+        this.gunName = gunName;
         this.upgrade = upgrade;
         this.price = price;
     }
@@ -59,7 +63,7 @@ public class Skin {
      * @return dSkin the default skin for testing
      */
     public static Skin getDefaultSkin() {
-        Skin dSkin = new Skin("DSkin", false, 100);
+        Skin dSkin = new Skin("DSkin", "Default", false, 100);
         return dSkin;
     }
 
@@ -82,6 +86,28 @@ public class Skin {
         }
     }
 
+    /**
+     * checks if you can actually apply the skin to the gun
+     * 
+     * method dependant on the Gun class that I made
+     * 
+     * @param gun the gun being applied to
+     * 
+     */
+    public boolean checkApplyable(Gun gun) {
+
+        boolean applyable = false;
+        if (this.gunName.equals(gun.getName()) || this.gunName.equals("Default")) {
+            applyable = true;
+        }
+        return applyable;
+    }
+
+    /**
+     * toString method returns all the attributes of the skin in a String
+     * 
+     * @return skinString string containing the attributes of the skin
+     */
     public String toString() {
 
         String skinString = "";

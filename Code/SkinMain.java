@@ -12,7 +12,7 @@ public class SkinMain {
     public static void main(String[] args) throws IOException {
 
         // test skin
-        Skin primeVandal = new Skin("Prime Vandal", true, 1775);
+        Skin primeVandal = new Skin("Prime Vandal", "Vandal", true, 1775);
         String skinString = primeVandal.toString();
 
         // initalizes profile and agent

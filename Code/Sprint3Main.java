@@ -67,7 +67,7 @@ public class Sprint3Main {
         Gun operator = initalGuns[4];
 
         // initalized 1st agent, skin, and gun
-        Skin reaverVandal = new Skin("Reaver Vandal", true, 1775);
+        Skin reaverVandal = new Skin("Reaver Vandal", "Vandal", true, 1775);
         Agent neon = AgentMain.Neon();
         neon.buyWeapon(spectre);
         neon.changeWeapon(vandal);
