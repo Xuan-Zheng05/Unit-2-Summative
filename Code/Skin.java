@@ -92,7 +92,7 @@ public class Skin {
      * method dependant on the Gun class that I made
      * 
      * @param gun the gun being applied to
-     * 
+     * @return applyable if the skin can be applied
      */
     public boolean checkApplyable(Gun gun) {
 
