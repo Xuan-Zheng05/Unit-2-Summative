@@ -48,6 +48,9 @@ public class Ability {
 	
 	/** if the ability is an ultimate */
 	private boolean isUltimate;
+
+	/** if you can use abilities */
+	private static boolean canUseAbilities;
 	
 
 	/**
@@ -83,6 +86,7 @@ public class Ability {
 		this.pull = pull;
 		this.speed = speed;
 		this.isUltimate = isUltimate;
+		this.canUseAbilities = true;
 
 	}
 
@@ -90,121 +94,195 @@ public class Ability {
 	 * Accessor Methods
 	 */
 
+	/**
+	 * Get name of the ability 
+	 * 
+	 * @return the name of the ability 
+	 */
 	public String getName() {
 
 		return this.name;
 
 	}
 
+	/**
+	 * Get the cost of the ability
+	 * 
+	 * @return the cost of the ability
+	 */
 	public int getCost() {
 
 		return this.cost;
 
 	}
 
+	/**
+	 * Get how much damage the ability does
+	 * 
+	 * @return how much damage the ability does
+	 */
 	public int getDamage() {
 
 		return this.damage;
 
 	}
 
+	/**
+	 * Get the amount of abilities the agent has
+	 * 
+	 * @return the amount of abilities the agent has
+	 */
 	public int getAmount() {
 
 		return this.amount;
 
 	}
 
+	/**
+	 * Get if the ability can blind
+	 * 
+	 * @return if the ability blinds
+	 */
 	public boolean getBlind() {
 
 		return this.blind;
 
 	}
 
+	/**
+	 * Get if the ability can slow
+	 * 
+	 * @return if the ability slows
+	 */
 	public boolean getSlow() {
 
 		return this.slow;
 
 	}
 
+	/**
+	 * Get if the ability can concuss
+	 * 
+	 * @return if the ability concusses
+	 */
 	public boolean getConcuss() {
 
 		return this.concuss;
 
 	}
 
+	/**
+	 * Get if the ability can decay 
+	 * 
+	 * @return if the ability causes decays
+	 */
 	public boolean getDecay() {
 
 		return this.decay;
 
 	}
 
+	/**
+	 * Get if the ability can make enemies vulnerable
+	 * 
+	 * @return if the ability causes vulnerability 
+	 */
 	public boolean getVulnerable() {
 
 		return this.vulnerable;
 
 	}
 
+	/**
+	 * Get if the ability can detect enemies 
+	 * 
+	 * @return if the ability detects enemies
+	 */
 	public boolean getDetect() {
 
 		return this.detect;
 
 	}
 	
+	/**
+	 * Get if the ability can pull 
+	 * 
+	 * @return if the ability pulls
+	 */
 	public boolean getPull() {
 
 		return this.pull;
 
 	}
 	
+	/**
+	 * Get if the ability speeds agent(s) up
+	 * 
+	 * @return if the ability speeds agent(s) up
+	 */
 	public boolean getSpeed() {
 
 		return this.speed;
 
 	}
 	
+	/**
+	 * Get if the ability is an ultimate
+	 * 
+	 * @return if the ability is an ultimate
+	 */
 	public boolean getUltimate() {
 
 		return this.isUltimate;
 
 	}
 
-	/*
-	 * Methods
-	 */
+   /*
+	* Methods
+	*/
+    
+   /**
+    * Sets all abilities to not able to be used
+    */
+	public static void disableAbilities() { 
+
+        canUseAbilities = false; 
+
+    }
 
 	/**
-	 * Method to cast an ability
+	 * Method to use sage heal orb 
 	 * 
-	 * @param times: the number of times the ability is casted
+	 * @param a: the agent getting healed
 	 */
-	public void cast(int times) {
+	public void useHealOrb(Agent a) {
 
-		this.amount -= times;
+		a.addAgentHp(60);
+        
+    }
 
-		if (this.amount < 0) {
+	/**
+	 * Method to use viper molly
+	 * 
+	 * @param a: the agent losing health
+	 */
+	public void useSnakeBite(Agent a) {
 
-			this.amount = 0;
+		a.subtractAgentHp(12);
 
-		}
+	}
+
+	/**
+	 * Method to sell an ability
+	 * 
+	 * @param credits: total amount of credits an agent has
+	 */
+	public void sellAbilities(int credits) { 
+
+		credits = credits + this.cost;
 
 	}
 	
-	/**
-	 * Method to buy an ability
-	 * 
-	 * @param credits
-	 */
-	public void buyAbilities(int credits) { 
-		
-		credits =- this.cost;
-		
-		if (this.cost > credits) { 
-			
-			System.out.println("You don't have enough credits to purchase an ability");
-			
-		}	
-		
-	}
 
 	/**
 	 * Displays all the attributes of the ability in a String
