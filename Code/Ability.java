@@ -238,7 +238,7 @@ public class Ability {
 	}
 
    /*
-	* Methods
+	* Mutator Methods
 	*/
     
    /**
@@ -249,15 +249,23 @@ public class Ability {
         canUseAbilities = false; 
 
     }
-
+	
 	/**
 	 * Method to use sage heal orb 
 	 * 
 	 * @param a: the agent getting healed
 	 */
-	public void useHealOrb(Agent a) {
+	public void useHealOrb(Agent a, boolean canUse) { // It's really hard to create every ability in the game so here is one ability for Sage
 
-		a.addAgentHp(60);
+		if (canUse = true) { 
+
+			a.addAgentHp(60);
+
+		} else { 
+
+			System.out.println("Can't use ability.");
+
+		}
         
     }
 
@@ -266,9 +274,17 @@ public class Ability {
 	 * 
 	 * @param a: the agent losing health
 	 */
-	public void useSnakeBite(Agent a) {
+	public void useSnakeBite(Agent a, boolean canUse) { // It's really hard to create every ability in the game so here is one ability for Viper
 
-		a.subtractAgentHp(12);
+		if (canUse = true) {
+
+			a.subtractAgentHp(12);
+
+		} else { 
+
+			System.out.println("Can't use ability.");
+
+		}
 
 	}
 
