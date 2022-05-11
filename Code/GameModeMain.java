@@ -1,3 +1,4 @@
+
 /**
  * Names: Yifei Qi
  * Date: May.2th, 2022
@@ -9,25 +10,19 @@ import java.util.*;
 import java.io.*;
 
 public class GameModeMain {
-    
-    public static GameMode[] initialGameModes() {
-        
-        GameMode unrated = new GameMode("Unrated", 40, 25, 10, false, true, false);
-        GameMode competitive = new GameMode("Competitive", 40, 25, 10, false, true, true);
-        GameMode spikeRush = new GameMode("SpikeRush", 15, 7, 10, true, false, false);
-        GameMode deathMatch = new GameMode("Deathmatch", 9, 1, 12, false, false, false);
-        GameMode shootingTest = new GameMode("ShootingTest", 100000, 1, 100000, false, false, false);
-        GameMode[] gameModeList = { unrated, competitive, spikeRush, deathMatch, shootingTest };
-        return gameModeList;        
-       }
 
-    public static void main(String[] args) throws IOException 
-    {
-        GameMode unrated = new GameMode("Unrated", 40, 25, 10, false, true, false);
-        GameMode competitive = new GameMode("Competitive", 40, 25, 10, false, true, true);
-        GameMode spikeRush = new GameMode("SpikeRush", 15, 7, 10, true, false, false);
-        GameMode deathMatch = new GameMode("Deathmatch", 9, 1, 12, false, false, false);
-        GameMode shootingTest = new GameMode("ShootingTest", 100000, 1, 100000, false, false, false);
+    public static GameMode[] initialGameModes() {
+
+        GameMode unrated = new GameMode("Unrated", 25, 10, false, true, false, true);
+        GameMode competitive = new GameMode("Competitive", 25, 10, false, true, true, true);
+        GameMode spikeRush = new GameMode("SpikeRush", 7, 10, true, false, false, false);
+        GameMode deathMatch = new GameMode("Deathmatch", 1, 12, false, false, false, true);
+        GameMode shootingTest = new GameMode("ShootingTest", 1, 100000, false, false, false, true);
         GameMode[] gameModeList = { unrated, competitive, spikeRush, deathMatch, shootingTest };
+        return gameModeList;
+    }
+
+    public static void main(String[] args) throws IOException {
+
     }
 }
