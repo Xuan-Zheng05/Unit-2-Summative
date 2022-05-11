@@ -94,5 +94,7 @@ public class Sprint3Main {
 
         viper.getGun().shoot(10);
         neon.bulletHit(viper.getGun(), viper, 5);
+     
     }
+ 
 }
