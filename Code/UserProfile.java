@@ -1,7 +1,7 @@
 
 /**
  * This is the player profile class, contains information about the player
- * @author Yuting Hou,Yifei Qi
+ * @author Yuting Hou
  * 4/28/2022
  */
 
@@ -29,6 +29,7 @@ public class UserProfile {
     UserSetting defaultSetting = new UserSetting();
 
     public UserProfile(String username) {
+
         if (username.length() < 3) {
 
             System.out.println("Name cannot be smaller than 3 characters.");
@@ -41,15 +42,18 @@ public class UserProfile {
 
             this.username = username;
         }
+
         this.agent = AgentMain.nullAgent();
         this.userInventory = defaulInventory;
         this.userSetting = defaultSetting;
+
     }
 
     /**
      * Constructor with name, and a default agentchoice
      */
     public UserProfile(String username, Agent AgentChoice) {
+        
         if (username.length() < 3) {
 
             System.out.println("Name cannot be smaller than 3 characters.");
@@ -76,6 +80,7 @@ public class UserProfile {
      * @param inventory the inventory of the profile
      */
     public UserProfile(String username, Agent agent, Inventory userInventory) {
+
         if (username.length() < 3) {
 
             System.out.println("Name cannot be smaller than 3 characters.");
@@ -95,6 +100,7 @@ public class UserProfile {
         this.userInventory = userInventory;
 
         this.userSetting = defaultSetting;
+
     }
 
     /**
@@ -106,6 +112,7 @@ public class UserProfile {
      * @param userSetting the usersetting of the profile
      */
     public UserProfile(String username, Agent agent, Inventory userInventory, UserSetting userSetting) {
+
         if (username.length() < 3) {
 
             System.out.println("Name cannot be smaller than 3 characters.");
@@ -186,11 +193,15 @@ public class UserProfile {
     }
 
     public Inventory getInventory() {
+
         return this.userInventory;
+
     }
 
     public UserSetting getUserSetting() {
+
         return this.userSetting;
+        
     }
 
     /**
@@ -218,11 +229,15 @@ public class UserProfile {
     }
 
     public void changeInventory(Inventory newInventory) {
+        
         this.userInventory = newInventory;
+
     }
 
     public void changeUserSetting(UserSetting newSetting) {
+
         this.userSetting = newSetting;
+
     }
 
     /**
