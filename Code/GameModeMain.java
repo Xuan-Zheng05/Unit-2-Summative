@@ -39,7 +39,10 @@ public class GameModeMain {
 
         if (s.equals("SpikeRush")) {
 
-            Gun.disableBuyGun();
+            Gun[] initalGuns = GunMain.initalGuns();
+            for (int i = 0; i < initalGuns.length; i++) {
+                initalGuns[i].disableBuy();
+            }
             System.out.println("You cannot purchase a gun.");
 
         }
