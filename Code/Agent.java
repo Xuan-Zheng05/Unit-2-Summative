@@ -1,5 +1,5 @@
 /**
- * Names: Yifei Qi, Bonny Chen
+ * Names: Yifei Qi
  * Date: April 28th, 2022
  * Description: This program will include all parts for agents in valorants
  * April.28.2022 - Added all attributes, accessors, and mutator methods
@@ -182,7 +182,9 @@ public class Agent {
    }
 
    static public String[] getRoleArray() {
+
       return role.clone();
+      
    }
 
    /**
@@ -190,7 +192,6 @@ public class Agent {
     * 
     * @return the abilities of the Agent
     */
-
    public Ability[] getAbility() {
 
       Ability[] agentAbility = new Ability[4];
@@ -240,7 +241,6 @@ public class Agent {
       return this.credits;
 
    }
-
 
    /*
     * Mutator
@@ -328,7 +328,6 @@ public class Agent {
     * 
     * @return hasArmor checker to check whether the agent wears armor
     */
-
    public Boolean removeArmor() {
 
       if (hasArmor == true) {
@@ -344,6 +343,12 @@ public class Agent {
    public void addAgentHp (int addedHp) {
 
       this.agentHp += addedHp;
+
+   }
+
+   public void subtractAgentHp (int subtractedHp) {
+
+      this.agentHp -= subtractedHp;
 
    }
 
