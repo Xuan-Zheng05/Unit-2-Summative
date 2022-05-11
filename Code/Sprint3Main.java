@@ -33,22 +33,22 @@ public class Sprint3Main {
         System.out.println("\n| Welcome to Valorant | " + playerName);
 
         do {
-         
+
             try {
-             
+
                 System.out.println("are you a new player[1] or an old player[2]?");
                 newOrOld = sc.nextInt();
                 ask = UserInterface.newOrOld(newOrOld, playerName, ask);
-             
-            } catch (InputMismatchException e) // if user did not enter integer {
-             
+
+            } catch (InputMismatchException e) {// if user did not enter integer
+
                 System.out.println("You have entered invalid input, try again!");
                 ask = true;
-         
+
             }
-     
-        } 
- 
+
+        }
+
         while (ask);
 
         ask = true;
@@ -99,7 +99,7 @@ public class Sprint3Main {
 
         viper.getGun().shoot(10);
         neon.bulletHit(viper.getGun(), viper, 5);
-     
+
     }
- 
+
 }
