@@ -1,7 +1,6 @@
 /**
- * Names: Bonny Chen
- * Date: April 28th, 2022
- * Description: The abilities class and all its attributes, accessors, and mutator methods
+ * Names: Bonny Chen Date: April 28th, 2022 Description: The abilities class and
+ * all its attributes, accessors, and mutator methods
  */
 
 public class Ability {
@@ -39,19 +38,18 @@ public class Ability {
 
 	/** if the ability detects a presence */
 	private boolean detect;
-	
+
 	/** if the ability pulls enemies in */
 	private boolean pull;
-	
+
 	/** if the ability makes allie agents faster */
 	private boolean speed;
-	
+
 	/** if the ability is an ultimate */
 	private boolean isUltimate;
 
 	/** if you can use abilities */
 	private static boolean canUseAbilities;
-	
 
 	/**
 	 * Constructor to create an ability
@@ -66,8 +64,8 @@ public class Ability {
 	 * @param decay:      if it decays
 	 * @param vulnerable: if it can make enemies vulnerable
 	 * @param detect:     if it can detects enemies
-	 * @param pull: 	  if it can pull enemies
-	 * @param speed: 	  if it increase allies speed
+	 * @param pull:       if it can pull enemies
+	 * @param speed:      if it increase allies speed
 	 * @param isUltimate: if this ability is an ultimate
 	 */
 	public Ability(String name, int cost, int damage, int amount, boolean blind, boolean slow, boolean concuss,
@@ -95,9 +93,9 @@ public class Ability {
 	 */
 
 	/**
-	 * Get name of the ability 
+	 * Get name of the ability
 	 * 
-	 * @return the name of the ability 
+	 * @return the name of the ability
 	 */
 	public String getName() {
 
@@ -172,7 +170,7 @@ public class Ability {
 	}
 
 	/**
-	 * Get if the ability can decay 
+	 * Get if the ability can decay
 	 * 
 	 * @return if the ability causes decays
 	 */
@@ -185,7 +183,7 @@ public class Ability {
 	/**
 	 * Get if the ability can make enemies vulnerable
 	 * 
-	 * @return if the ability causes vulnerability 
+	 * @return if the ability causes vulnerability
 	 */
 	public boolean getVulnerable() {
 
@@ -194,7 +192,7 @@ public class Ability {
 	}
 
 	/**
-	 * Get if the ability can detect enemies 
+	 * Get if the ability can detect enemies
 	 * 
 	 * @return if the ability detects enemies
 	 */
@@ -203,9 +201,9 @@ public class Ability {
 		return this.detect;
 
 	}
-	
+
 	/**
-	 * Get if the ability can pull 
+	 * Get if the ability can pull
 	 * 
 	 * @return if the ability pulls
 	 */
@@ -214,7 +212,7 @@ public class Ability {
 		return this.pull;
 
 	}
-	
+
 	/**
 	 * Get if the ability speeds agent(s) up
 	 * 
@@ -225,7 +223,7 @@ public class Ability {
 		return this.speed;
 
 	}
-	
+
 	/**
 	 * Get if the ability is an ultimate
 	 * 
@@ -237,68 +235,56 @@ public class Ability {
 
 	}
 
-   /*
-	* Mutator Methods
-	*/
-    
-   /**
-    * Sets all abilities to not able to be used
-    */
-	public static void disableAbilities() { 
+	/*
+	 * Mutator Methods
+	 */
 
-        canUseAbilities = false; 
-
-    }
-	
 	/**
-	 * Method to use sage heal orb 
+	 * Sets all abilities to not able to be used
+	 */
+	public static void disableAbilities() {
+
+		canUseAbilities = false;
+
+	}
+
+	/**
+	 * Method to use sage heal orb
 	 * 
 	 * @param a: the agent getting healed
 	 */
-	public void useHealOrb(Agent a, boolean canUse) { // It's really hard to create every ability in the game so here is one ability for Sage
+	public void useHealOrb(Agent a, boolean canUse) {
 
-		if (canUse = true) { 
+		if (canUse = true) {
 
 			a.addAgentHp(60);
 
-		} else { 
+		} else {
 
 			System.out.println("Can't use ability.");
 
 		}
-        
-    }
+
+	}
 
 	/**
 	 * Method to use viper molly
 	 * 
 	 * @param a: the agent losing health
 	 */
-	public void useSnakeBite(Agent a, boolean canUse) { // It's really hard to create every ability in the game so here is one ability for Viper
+	public void useSnakeBite(Agent a, boolean canUse) {
 
 		if (canUse = true) {
 
 			a.subtractAgentHp(12);
 
-		} else { 
+		} else {
 
 			System.out.println("Can't use ability.");
 
 		}
 
 	}
-
-	/**
-	 * Method to sell an ability
-	 * 
-	 * @param credits: total amount of credits an agent has
-	 */
-	public void sellAbilities(int credits) { 
-
-		credits = credits + this.cost;
-
-	}
-	
 
 	/**
 	 * Displays all the attributes of the ability in a String
@@ -322,7 +308,7 @@ public class Ability {
 		abilityString = abilityString + "Pulls Enemies: " + this.pull + "\n";
 		abilityString = abilityString + "Speeds Allies: " + this.speed + "\n";
 		abilityString = abilityString + "Ultimate Ability: " + this.isUltimate + "\n";
-		
+
 		return abilityString;
 
 	}
