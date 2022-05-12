@@ -1,8 +1,7 @@
 /**
- * Names: Yifei Qi, Bonny Chen
+ * Names: Bonny Chen, Yifei Qi
  * Date: May 2nd, 2022
  * Description: This program will include all gamemodes in valorant
- * May.2th - Unrated, Competitive, Spike rush, DeathMatch, Shooting test
  */
 
 public class GameMode {
@@ -39,8 +38,8 @@ public class GameMode {
      * @param ratedChecker
      * @param useAbilities
      */
-    public GameMode(String name, int totalRoundCount, int totalPlayers, boolean plantSpike, boolean buyWeapon,
-            boolean ratedChecker, boolean useAbilities) {
+    public GameMode(String name, int totalRoundCount, int totalPlayers, boolean plantSpike,
+            boolean ratedChecker, boolean useAbilities, boolean buyWeapon) {
 
         this.name = name;
         this.totalRoundCount = totalRoundCount;
@@ -61,37 +60,61 @@ public class GameMode {
      * 
      * @return the name of the Agent
      */
-
     public String getName() {
 
         return this.name;
 
     }
 
-    public int gettotalRoundCount() {
+    /**
+     * Gets how many rounds there are
+     * 
+     * @return the total round count
+     */
+    public int getTotalRoundCount() {
 
         return this.totalRoundCount;
 
     }
 
+    /**
+     * Gets how many players are in the game
+     * 
+     * @return the total number of players
+     */
     public int getTotalPlayerCount() {
 
         return this.totalPlayers;
 
     }
 
+    /**
+     * Get if you can plant the spike in the gamemode
+     * 
+     * @return if you can plant spike
+     */
     public Boolean getPlantSpike() {
 
         return this.plantSpike;
 
     }
 
+    /**
+     * Get if you can buy weapons in the gamemode
+     * 
+     * @return if you can buy weapons
+     */
     public Boolean getBuyWeapon() {
 
         return this.buyWeapon;
 
     }
 
+    /**
+	 * Displays all the attributes of the gamemode in a String
+	 * 
+	 * @return GameModeString with all the attributes of the gamemode
+	 */
     public String toString() {
 
         String GameModeString = "";
