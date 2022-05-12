@@ -1,4 +1,3 @@
-
 /**
  * Names: Yifei Qi, Bonny Chen
  * Date: May.2th, 2022
@@ -28,10 +27,12 @@ public class GameModeMain {
         // initalized GameModes
         GameMode[] gameModeList = GameModeMain.initialGameModes();
         String s = gameModeList[(int) Math.floor(Math.random() * 5)].getName();
+        boolean canUse;
         System.out.println("The gamemode is " + s);
-
+        
         if (s.equals("DeathMatch")) {
 
+            canUse = false;
             Ability.disableAbilities();
             System.out.println("Abilities are disabled.");
 
@@ -41,11 +42,21 @@ public class GameModeMain {
 
             Gun[] initalGuns = GunMain.initalGuns();
             for (int i = 0; i < initalGuns.length; i++) {
+
                 initalGuns[i].disableBuy();
+
             }
+
             System.out.println("You cannot purchase a gun.");
 
         }
+
+        // Initialize 2 agents
+        Agent viper = AgentMain.Viper();
+        Agent sage = AgentMain.Sage();
+
+        sage.useHealOrb(viper, canUse);
+
 
     }
 
