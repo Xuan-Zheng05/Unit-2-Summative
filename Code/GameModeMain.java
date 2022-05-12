@@ -1,3 +1,4 @@
+
 /**
  * Names: Yifei Qi, Bonny Chen
  * Date: May.2th, 2022
@@ -29,7 +30,7 @@ public class GameModeMain {
         String s = gameModeList[(int) Math.floor(Math.random() * 5)].getName();
         boolean canUse;
         System.out.println("The gamemode is " + s);
-        
+
         if (s.equals("DeathMatch")) {
 
             canUse = false;
@@ -55,8 +56,7 @@ public class GameModeMain {
         Agent viper = AgentMain.Viper();
         Agent sage = AgentMain.Sage();
 
-        sage.useHealOrb(viper, canUse);
-
+        sage.getAbility().useHealOrb(viper, canUse);
 
     }
 
