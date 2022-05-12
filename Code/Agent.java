@@ -1,413 +1,413 @@
 /**
- * Names: Yifei Qi, Bonny Chen
- * Date: April 28th, 2022
- * Description: This program will include all parts for agents in valorants
- * April.28.2022 - Added all attributes, accessors, and mutator methods
- * April.29.2022 - Fixed getAbility function, deleted duplicated accessors,
- * added comments
- * May.2.2022 - Rename the whole program to Agent, Add Hp and Armor check to
- * Attributes, fixed Comments
- * May.3.2022 - added default constructor with 0 credits at begining, added change gun methods
+ * Names: Yifei Qi, Bonny Chen 
+ * Date: April 28th, 2022 
+ * Description: This program will include all parts for agents in valorants 
+ * April.28.2022 - Added all attributes, accessors, and mutator methods 
+ * April.29.2022 - Fixed getAbility function, deleted duplicated accessors, added comments 
+ * May.2.2022 - Rename the whole program to Agent, Add Hp and Armor check to Attributes, fixed Comments 
+ * May.3.2022 - added default constructor with 0 credits at begining, added change gun methods 
  * May.6.2022 - added method to buy weapon with credits
- * May.8.2022 - added a defualt blank constructor, fixed comments
+ * May.8.2022 - added a defualt blank constructor, fixed comments 
  * May.9.2022 - fixed comments
  */
 
 public class Agent {
 
-   /*
-    * Attributes
-    */
+	/*
+	 * Attributes
+	 */
 
-   /** name of the Agents */
-   private String name;
+	/** name of the Agents */
+	private String name;
 
-   /** natioality of the Agents */
-   private String nation;
+	/** natioality of the Agents */
+	private String nation;
 
-   /** role of the Agents */
-   static private String[] role = { "Controller", "Sentinel", "Initiator", "Duelist" };
+	/** role of the Agents */
+	static private String[] role = { "Controller", "Sentinel", "Initiator", "Duelist" };
 
-   /** Guns of the Agents */
-   private Gun gun;
+	/** Guns of the Agents */
+	private Gun gun;
 
-   /** Hp of the Agents */
-   private int agentHp;
+	/** Hp of the Agents */
+	private int agentHp;
 
-   /** Abillities of the Agent */
-   private Ability[] abilityOfAgent = new Ability[4];
+	/** Abillities of the Agent */
+	private Ability[] abilityOfAgent = new Ability[4];
 
-   /** Whether the Agent has Armor or not */
-   private Boolean hasArmor;
+	/** Whether the Agent has Armor or not */
+	private Boolean hasArmor;
 
-   /** amount of credits the agent has */
-   private int credits;
+	/** amount of credits the agent has */
+	private int credits;
 
-    /*
-    * Default constructor
-    */
+	/*
+	 * Default constructor
+	 */
 
-   public Agent() {
-      
-   }
+	public Agent() {
 
-   /**
-    * Default Constructor with credis 0 in the beginning 
-    * 
-    * @param name             name of the agents
-    * @param nation           nationality of the Agent
-    * @param gun              the gun that the Agent is using
-    * @param AbilityOfAgent[] the four ability of agent
-    * @param hasArmor         Checker to check whether the Agent has Armor
-    */
+	}
 
-   public Agent(String name, String nation, String role, Gun gun, Ability abilityOfAgent[], Boolean hasArmor) {
+	/**
+	 * Default Constructor with credis 0 in the beginning
+	 * 
+	 * @param name             name of the agents
+	 * @param nation           nationality of the Agent
+	 * @param gun              the gun that the Agent is using
+	 * @param AbilityOfAgent[] the four ability of agent
+	 * @param hasArmor         Checker to check whether the Agent has Armor
+	 */
 
-      this.name = name;
-      this.nation = nation;
-      this.role[0] = role;
-      this.gun = gun;
+	public Agent(String name, String nation, String role, Gun gun, Ability abilityOfAgent[], Boolean hasArmor) {
 
-      for (int i = 0; i < 4; i++) {
+		this.name = name;
+		this.nation = nation;
+		this.role[0] = role;
+		this.gun = gun;
 
-         this.abilityOfAgent[i] = abilityOfAgent[i];
+		for (int i = 0; i < 4; i++) {
 
-      }
+			this.abilityOfAgent[i] = abilityOfAgent[i];
 
-      this.hasArmor = hasArmor;
+		}
 
-      if (this.hasArmor) {
+		this.hasArmor = hasArmor;
 
-         this.agentHp = 150;
+		if (this.hasArmor) {
 
-      } else {
+			this.agentHp = 150;
 
-         this.agentHp = 100;
+		} else {
 
-      }
+			this.agentHp = 100;
 
-      this.credits = 0;
+		}
 
-   }
+		this.credits = 0;
 
-   /**
-    * Constructor
-    * 
-    * @param name             name of the agents
-    * @param nation           nationality of the Agent
-    * @param gun              the gun that the Agent is using
-    * @param AbilityOfAgent[] the four ability of agent
-    * @param hasArmor         Checker to check whether the Agent has Armor
-    */
+	}
 
-   public Agent(String name, String nation, String role, Gun gun, Ability abilityOfAgent[], Boolean hasArmor, int credits) {
+	/**
+	 * Constructor
+	 * 
+	 * @param name             name of the agents
+	 * @param nation           nationality of the Agent
+	 * @param gun              the gun that the Agent is using
+	 * @param AbilityOfAgent[] the four ability of agent
+	 * @param hasArmor         Checker to check whether the Agent has Armor
+	 */
 
-      this.name = name;
-      this.nation = nation;
-      this.role[0] = role;
-      this.gun = gun;
+	public Agent(String name, String nation, String role, Gun gun, Ability abilityOfAgent[], Boolean hasArmor,
+			int credits) {
 
-      for (int i = 0; i < 4; i++) {
+		this.name = name;
+		this.nation = nation;
+		this.role[0] = role;
+		this.gun = gun;
 
-         this.abilityOfAgent[i] = abilityOfAgent[i];
+		for (int i = 0; i < 4; i++) {
 
-      }
+			this.abilityOfAgent[i] = abilityOfAgent[i];
 
-      this.hasArmor = hasArmor;
+		}
 
-      if (this.hasArmor) {
+		this.hasArmor = hasArmor;
 
-         this.agentHp = 150;
+		if (this.hasArmor) {
 
-      } else {
+			this.agentHp = 150;
 
-         this.agentHp = 100;
+		} else {
 
-      }
+			this.agentHp = 100;
 
-      this.credits = credits;
+		}
 
-   }
+		this.credits = credits;
 
-   /*
-    * Accessors
-    */
+	}
 
-   /**
-    * Gets the Agent name
-    * 
-    * @return the name of the Agent
-    */
+	/*
+	 * Accessors
+	 */
 
-   public String getName() {
+	/**
+	 * Gets the Agent name
+	 * 
+	 * @return the name of the Agent
+	 */
 
-      return this.name;
+	public String getName() {
 
-   }
+		return this.name;
 
-   /**
-    * Gets the Agent nationality
-    * 
-    * @return the nationality of the Agent
-    */
+	}
 
-   public String getNation() {
+	/**
+	 * Gets the Agent nationality
+	 * 
+	 * @return the nationality of the Agent
+	 */
 
-      return this.nation;
+	public String getNation() {
 
-   }
+		return this.nation;
 
-   /**
-    * Gets the Agent hp
-    * 
-    * @return the hp of the Agent
-    */
+	}
 
-   public int getAgentHp() {
+	/**
+	 * Gets the Agent hp
+	 * 
+	 * @return the hp of the Agent
+	 */
 
-      return this.agentHp;
+	public int getAgentHp() {
 
-   }
+		return this.agentHp;
 
-   /**
-    * Gets the type of the agent
-    * 
-    * @return the type of the Agent
-    */
+	}
 
-   public String getRole() {
+	/**
+	 * Gets the type of the agent
+	 * 
+	 * @return the type of the Agent
+	 */
 
-      return this.role[0];
+	public String getRole() {
 
-   }
+		return this.role[0];
 
-   static public String[] getRoleArray() {
+	}
 
-      return role.clone();
-      
-   }
+	static public String[] getRoleArray() {
 
-   /**
-    * Gets the abilities of the agent
-    * 
-    * @return the abilities of the Agent
-    */
-   public Ability[] getAbility() {
+		return role.clone();
 
-      Ability[] agentAbility = new Ability[4];
+	}
 
-      for (int i = 0; i < 4; i++) {
+	/**
+	 * Gets the abilities of the agent
+	 * 
+	 * @return the abilities of the Agent
+	 */
+	public Ability[] getAbility() {
 
-         agentAbility[i] = this.abilityOfAgent[i];
+		Ability[] agentAbility = new Ability[4];
 
-      }
+		for (int i = 0; i < 4; i++) {
 
-      return agentAbility;
+			agentAbility[i] = this.abilityOfAgent[i];
 
-   }
+		}
 
-   /**
-    * Gets the gun of the agent
-    * 
-    * @return the gun of the Agent
-    */
+		return agentAbility;
 
-   public Gun getGun() {
+	}
 
-      return this.gun;
+	/**
+	 * Gets the gun of the agent
+	 * 
+	 * @return the gun of the Agent
+	 */
 
-   }
+	public Gun getGun() {
 
-   /**
-    * Check whether the agent have armor
-    * 
-    * @return the armor check of the Agent
-    */
+		return this.gun;
 
-   public Boolean getHasArmor() {
+	}
 
-      return this.hasArmor;
+	/**
+	 * Check whether the agent have armor
+	 * 
+	 * @return the armor check of the Agent
+	 */
 
-   }
+	public Boolean getHasArmor() {
 
-   /**
-    * Gets the amount of credits of the agent
-    * 
-    * @return the amount of credits
-    */
+		return this.hasArmor;
 
-   public int getCredits() {
+	}
 
-      return this.credits;
+	/**
+	 * Gets the amount of credits of the agent
+	 * 
+	 * @return the amount of credits
+	 */
 
-   }
+	public int getCredits() {
 
-   /*
-    * Mutator
-    */
+		return this.credits;
 
-   /**
-    * changes the weapon of the agent
-    * 
-    * @param gun the gun being changed to
-    */
+	}
 
-   public void changeWeapon(Gun gun) {
+	/*
+	 * Mutator
+	 */
 
-      this.gun = gun;
+	/**
+	 * changes the weapon of the agent
+	 * 
+	 * @param gun the gun being changed to
+	 */
 
-   }
+	public void changeWeapon(Gun gun) {
 
-   /**
-    * agent buys a gun and credits are subtracted from the cost of the gun
-    * 
-    * @param gun the gun being bought
-    */
+		this.gun = gun;
 
-   public void buyWeapon(Gun gun) {
+	}
 
-      this.gun = gun;
-      this.credits = this.credits - gun.getCost();
+	/**
+	 * agent buys a gun and credits are subtracted from the cost of the gun
+	 * 
+	 * @param gun the gun being bought
+	 */
 
-      if (this.credits < 0) { 
+	public void buyWeapon(Gun gun) {
 
-         System.out.println("You don't have enough credits to buy the gun.");
+		this.gun = gun;
+		this.credits = this.credits - gun.getCost();
 
-      }
+		if (this.credits < 0) {
 
-   }
+			System.out.println("You don't have enough credits to buy the gun.");
 
-   /**
+		}
+
+	}
+
+	/**
 	 * Method to buy an ability (Bonny)
 	 * 
 	 * @param credits: total amount of credits an agent has
 	 */
-	public void buyAbilities(Ability[] ability) { 
-		
+	public void buyAbilities(Ability[] ability) {
+
 		this.abilityOfAgent = ability;
-      this.credits = this.credits - ability[0].getCost();
+		this.credits = this.credits - ability[0].getCost();
 
-      if (this.credits < 0) { 
+		if (this.credits < 0) {
 
-         System.out.println("You don't have enough credits to buy the ability.");
+			System.out.println("You don't have enough credits to buy the ability.");
 
-      }
-		
+		}
+
 	}
-   
+
 	/**
 	 * Method to sell an ability (Bonny)
 	 * 
 	 * @param credits: total amount of credits an agent has
 	 */
-	public void sellAbilities(Ability[] ability) { 
+	public void sellAbilities(Ability[] ability) {
 
-		credits = credits + ability[0].getCost();;
+		credits = credits + ability[0].getCost();
+		;
 
 	}
 
-   /**
-    * set the agents credits to a new value
-    * 
-    * @param credis the new credits the agent will have 
-    */
-   public void changeCredit(int credits) {
+	/**
+	 * set the agents credits to a new value
+	 * 
+	 * @param credis the new credits the agent will have
+	 */
+	public void changeCredit(int credits) {
 
-      this.credits = credits;
+		this.credits = credits;
 
-   }
+	}
 
-   /*
-    * Methods
-    */
+	/*
+	 * Methods
+	 */
 
-   /**
-    * Wears the armor for agent, set wearArmor = true
-    * 
-    * @return hasArmor checker to check whether the agent wears armor
-    */
+	/**
+	 * Wears the armor for agent, set wearArmor = true
+	 * 
+	 * @return hasArmor checker to check whether the agent wears armor
+	 */
 
-   public Boolean wearArmor() {
+	public Boolean wearArmor() {
 
-      hasArmor = true;
-      return hasArmor;
+		hasArmor = true;
+		return hasArmor;
 
-   }
+	}
 
-   /**
-    * remove the armor for the agent if it has one
-    * 
-    * @return hasArmor checker to check whether the agent wears armor
-    */
-   public Boolean removeArmor() {
+	/**
+	 * remove the armor for the agent if it has one
+	 * 
+	 * @return hasArmor checker to check whether the agent wears armor
+	 */
+	public Boolean removeArmor() {
 
-      if (hasArmor == true) {
+		if (hasArmor == true) {
 
-         hasArmor = false;
+			hasArmor = false;
 
-      }
+		}
 
-      return hasArmor;
+		return hasArmor;
 
-   }
+	}
 
-   public void addAgentHp (int addedHp) {
+	public void addAgentHp(int addedHp) {
 
-      this.agentHp += addedHp;
+		this.agentHp += addedHp;
 
-   }
+	}
 
-   public void subtractAgentHp (int subtractedHp) {
+	public void subtractAgentHp(int subtractedHp) {
 
-      this.agentHp -= subtractedHp;
+		this.agentHp -= subtractedHp;
 
-   }
+	}
 
-   /**
-    * Bullet hits agent, subtracts body dmg of gun from agentHp
-    * if agentHp reaches 0, print out (agentName) is dead
-    * 
-    * @param gun   the gun the bullet was shot from
-    * @param agent the agent that was hit
-    * @param times the number of times the agent of hit
-    */
-   public void bulletHit(Gun gun, Agent agent, int times) {
+	/**
+	 * Bullet hits agent, subtracts body dmg of gun from agentHp if agentHp reaches
+	 * 0, print out (agentName) is dead
+	 * 
+	 * @param gun   the gun the bullet was shot from
+	 * @param agent the agent that was hit
+	 * @param times the number of times the agent of hit
+	 */
+	public void bulletHit(Gun gun, Agent agent, int times) {
 
-      this.agentHp -= gun.getBodyDmg() * times;
+		this.agentHp -= gun.getBodyDmg() * times;
 
-      if (agentHp <= 0) {
+		if (agentHp <= 0) {
 
-         System.out.println(this.name + " is dead");
+			System.out.println(this.name + " is dead");
 
-      }
+		}
 
-   }
+	}
 
-   /**
-    * Displays all the attributes of the ability in a String
-    * 
-    * @return agentString with all the attributes of the ability
-    */
+	/**
+	 * Displays all the attributes of the ability in a String
+	 * 
+	 * @return agentString with all the attributes of the ability
+	 */
 
-   public String toString() {
+	public String toString() {
 
-      String agentString = "";
+		String agentString = "";
 
-      agentString = agentString + "Name: " + this.name + "\n";
-      agentString = agentString + "Nation: " + this.nation + "\n";
-      agentString = agentString + "Role: " + this.role[0] + "\n";
-      agentString = agentString + "Gun: " + this.gun.getName() + "\n";
+		agentString = agentString + "Name: " + this.name + "\n";
+		agentString = agentString + "Nation: " + this.nation + "\n";
+		agentString = agentString + "Role: " + this.role[0] + "\n";
+		agentString = agentString + "Gun: " + this.gun.getName() + "\n";
 
-      for (int i = 0; i < 3; i++) {
+		for (int i = 0; i < 3; i++) {
 
-         agentString = agentString + "Ability " + (i + 1) + ": " + this.abilityOfAgent[i].getName() + "\n";
+			agentString = agentString + "Ability " + (i + 1) + ": " + this.abilityOfAgent[i].getName() + "\n";
 
-      }
+		}
 
-      agentString = agentString + "Ultimate: " + this.abilityOfAgent[3].getName() + "\n";
-      agentString = agentString + "Credits: " + this.credits + "\n";
-      return agentString;
+		agentString = agentString + "Ultimate: " + this.abilityOfAgent[3].getName() + "\n";
+		agentString = agentString + "Credits: " + this.credits + "\n";
+		return agentString;
 
-   }
+	}
 
 }
