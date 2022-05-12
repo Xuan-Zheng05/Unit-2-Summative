@@ -1,6 +1,5 @@
-
 /**
- * Names: Yifei Qi, Bonny Chen
+ * Names: Bonny Chen
  * Date: May.2th, 2022
  * Description: This program will initilzie the five gamemode in valorant (Unrated, Competitive, Spike rush, DeathMatch, Shooting test)
  * 
@@ -22,7 +21,8 @@ public class GameModeMain {
         return gameModeList;
 
     }
-
+    
+    // This demonstrates how GameMode relates to Ability and Gun and how Ability relates to GameMode and Agent
     public static void main(String[] args) throws IOException {
 
         // initalized GameModes
@@ -51,7 +51,7 @@ public class GameModeMain {
             System.out.println("You cannot purchase a gun.");
 
         }
-
+        
         // Initialize 2 agents
         Agent viper = AgentMain.Viper();
         Agent sage = AgentMain.Sage();
