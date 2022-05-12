@@ -1,5 +1,5 @@
 /**
- * Names: Yifei Qi
+ * Names: Yifei Qi, Bonny Chen
  * Date: April 28th, 2022
  * Description: This program will include all parts for agents in valorants
  * April.28.2022 - Added all attributes, accessors, and mutator methods
@@ -278,7 +278,7 @@ public class Agent {
    }
 
    /**
-	 * Method to buy an ability
+	 * Method to buy an ability (Bonny)
 	 * 
 	 * @param credits: total amount of credits an agent has
 	 */
@@ -293,6 +293,17 @@ public class Agent {
 
       }
 		
+	}
+   
+	/**
+	 * Method to sell an ability (Bonny)
+	 * 
+	 * @param credits: total amount of credits an agent has
+	 */
+	public void sellAbilities(Ability[] ability) { 
+
+		credits = credits + ability[0].getCost();;
+
 	}
 
    /**
