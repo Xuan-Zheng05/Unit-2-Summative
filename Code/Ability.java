@@ -1,6 +1,7 @@
 /**
- * Names: Bonny Chen Date: April 28th, 2022 Description: The abilities class and
- * all its attributes, accessors, and mutator methods
+ * Names: Bonny Chen Date: 
+ * April 28th, 2022 
+ * Description: The abilities class and all its attributes, accessors, and mutator methods
  */
 
 public class Ability {
