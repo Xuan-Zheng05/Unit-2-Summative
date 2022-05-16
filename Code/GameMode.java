@@ -68,7 +68,7 @@ public class GameMode {
 
     /**
      * Gets how many rounds there are
-     * 
+     *
      * @return the total round count
      */
     public int getTotalRoundCount() {
@@ -111,10 +111,10 @@ public class GameMode {
     }
 
     /**
-	 * Displays all the attributes of the gamemode in a String
-	 * 
-	 * @return GameModeString with all the attributes of the gamemode
-	 */
+     * Displays all the attributes of the gamemode in a String
+     * 
+     * @return GameModeString with all the attributes of the gamemode
+     */
     public String toString() {
 
         String GameModeString = "";
