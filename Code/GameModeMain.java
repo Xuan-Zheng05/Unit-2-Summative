@@ -1,8 +1,7 @@
 /**
  * Names: Bonny Chen
- * Date: May.2th, 2022
+ * Date: May 2nd, 2022
  * Description: This program will initilzie the five gamemode in valorant (Unrated, Competitive, Spike rush, DeathMatch, Shooting test)
- * 
  */
 
 import java.util.*;
@@ -25,26 +24,28 @@ public class GameModeMain {
     // This demonstrates how GameMode relates to Ability and Gun and how Ability relates to GameMode and Agent
     public static void main(String[] args) throws IOException {
 
-        // initalized GameModes
+        // Initalized GameModes
         GameMode[] gameModeList = GameModeMain.initialGameModes();
         String s = gameModeList[(int) Math.floor(Math.random() * 5)].getName();
         boolean canUse;
         System.out.println("The gamemode is " + s);
-
+        
+        // If the game mode is deathmatch is selected
         if (s.equals("DeathMatch")) {
 
             canUse = false;
-            Ability.disableAbilities();
+            Ability.disableAbilities(); // disable the abilities to buy
             System.out.println("Abilities are disabled.");
 
         }
-
+    
+        // If the game mode spike rush is selected
         if (s.equals("SpikeRush")) {
 
             Gun[] initalGuns = GunMain.initalGuns();
             for (int i = 0; i < initalGuns.length; i++) {
 
-                initalGuns[i].disableBuy();
+                initalGuns[i].disableBuy(); // disable the guns to buy
 
             }
 
