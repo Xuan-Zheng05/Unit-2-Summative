@@ -1,24 +1,64 @@
 /**
- * Names: Yifei Qi
- * Date: May.2th, 2022
+ * Names: Bonny Chen
+ * Date: May 2nd, 2022
  * Description: This program will initilzie the five gamemode in valorant (Unrated, Competitive, Spike rush, DeathMatch, Shooting test)
- * 
  */
 
 import java.util.*;
 import java.io.*;
 
 public class GameModeMain {
-    
+
     public static GameMode[] initialGameModes() {
-        
-        GameMode unrated = new GameMode("Unrated", 40, 25, 10, false, true, false);
-        GameMode competitive = new GameMode("Competitive", 40, 25, 10, false, true, true);
-        GameMode spikeRush = new GameMode("SpikeRush", 15, 7, 10, true, false, false);
-        GameMode deathMatch = new GameMode("Deathmatch", 9, 1, 12, false, false, false);
-        GameMode shootingTest = new GameMode("ShootingTest", 100000, 1, 100000, false, false, false);
+
+        GameMode unrated = new GameMode("Unrated", 25, 10, false, true, false, true);
+        GameMode competitive = new GameMode("Competitive", 25, 10, false, true, true, true);
+        GameMode spikeRush = new GameMode("SpikeRush", 7, 10, true, false, false, false);
+        GameMode deathMatch = new GameMode("Deathmatch", 1, 12, false, false, false, true);
+        GameMode shootingTest = new GameMode("ShootingTest", 1, 100000, false, false, false, true);
         GameMode[] gameModeList = { unrated, competitive, spikeRush, deathMatch, shootingTest };
-        return gameModeList;        
+        return gameModeList;
+
     }
     
+    // This demonstrates how GameMode relates to Ability and Gun and how Ability relates to GameMode and Agent
+    public static void main(String[] args) throws IOException {
+
+        // Initalized GameModes
+        GameMode[] gameModeList = GameModeMain.initialGameModes();
+        String s = gameModeList[(int) Math.floor(Math.random() * 5)].getName();
+        boolean canUse;
+        System.out.println("The gamemode is " + s);
+        
+        // If the game mode is deathmatch is selected
+        if (s.equals("DeathMatch")) {
+
+            canUse = false;
+            Ability.disableAbilities(); // disable the abilities to buy
+            System.out.println("Abilities are disabled.");
+
+        }
+    
+        // If the game mode spike rush is selected
+        if (s.equals("SpikeRush")) {
+
+            Gun[] initalGuns = GunMain.initalGuns();
+            for (int i = 0; i < initalGuns.length; i++) {
+
+                initalGuns[i].disableBuy(); // disable the guns to buy
+
+            }
+
+            System.out.println("You cannot purchase a gun.");
+
+        }
+        
+        // Initialize 2 agents
+        Agent viper = AgentMain.Viper();
+        Agent sage = AgentMain.Sage();
+
+        sage.getSingleAbility().useHealOrb(viper, canUse);
+
+    }
+
 }

@@ -1,8 +1,8 @@
+import java.util.ArrayList;
+
 /**
- * Name: Xuan
- * Date: 04/28/2022
- * Description: A program that houses the Gun class and all its attributes,
- * accessors, mutators, and other methods.
+ * Name: Xuan Date: 04/28/2022 Description: A program that houses the Gun class
+ * and all its attributes, accessors, mutators, and other methods.
  */
 
 public class Gun {
@@ -47,6 +47,9 @@ public class Gun {
     /** amound of dmg each shot does to the leg */
     private int legDmg;
 
+    /** if you can buy guns or not */
+    private static boolean canBuyWeapon;
+
     /**
      * Constructor
      * 
@@ -78,6 +81,8 @@ public class Gun {
         this.headDmg = headDmg;
         this.bodyDmg = bodyDmg;
         this.legDmg = legDmg;
+        this.canBuyWeapon = true;
+
     }
 
     /*
@@ -90,9 +95,9 @@ public class Gun {
 
     }
 
-    public String getSkin() {
+    public Skin getSkin() {
 
-        return this.skin.getName();
+        return this.skin;
 
     }
 
@@ -125,7 +130,9 @@ public class Gun {
     }
 
     public int getBodyDmg() {
+
         return this.bodyDmg;
+
     }
 
     public int getLegDmg() {
@@ -139,8 +146,7 @@ public class Gun {
      */
 
     /**
-     * shoot method
-     * subtracts one bullet from the magazine each time it is shot
+     * shoot method subtracts one bullet from the magazine each time it is shot
      * 
      * @param times times you shoot the gun
      * 
@@ -158,10 +164,8 @@ public class Gun {
     }
 
     /**
-     * reload method
-     * reloads the magazine to magazine size.
-     * if there is not enough reserve ammo for a full reload, only reload how much
-     * reserve ammo there is
+     * reload method reloads the magazine to magazine size. if there is not enough
+     * reserve ammo for a full reload, only reload how much reserve ammo there is
      */
     public void reload() {
 
@@ -173,16 +177,61 @@ public class Gun {
 
         } else {
 
+            this.reserve -= magazineSize - magazine;
             this.magazine = magazineSize;
-            this.reserve -= magazineSize;
 
         }
 
     }
 
     /**
-     * toString method
-     * returns all the attributes of the gun in a String
+     * sets the canBuyWeapon variable to false
+     */
+    public static void disableBuy() {
+
+        canBuyWeapon = false;
+
+    }
+
+    /**
+     * changes the skin of the gun by getting all the skins of the user profile and
+     * checking if the skin is in the user inventory
+     * 
+     * this is the method dependant on the skin class I did and is dependant on the
+     * userProfile class
+     * 
+     * @param skin    the skin being bought
+     * @param profile the profile of the player changing their skin
+     */
+
+    public void changeSkin(Skin skin, UserProfile profile) {
+
+        ArrayList<Skin> list = profile.getInventory().getOwnedSkin();
+
+        // loops through the arraylist to check if the skin is there
+        boolean hasSkin = false;
+
+        for (int i = 0; i < list.size(); i++) {
+
+            if (list.get(i).equals(skin)) {
+
+                hasSkin = true;
+
+            }
+
+        }
+
+        // is the skin is in the inventory, change the skin
+        if (hasSkin) {
+
+            this.skin = skin;
+
+        }
+
+    }
+
+    /**
+     * toString method returns all the attributes of the gun in a String
      * 
      * @return gunString string containing the attributes of the gun
      */

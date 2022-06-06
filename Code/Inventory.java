@@ -8,10 +8,15 @@ import java.util.ArrayList;
  */
 public class Inventory {
 
-    /** The amount of valorant points the user has */
+    /**
+     * The amount of valorant points the user has, valPoint is used to purchase
+     * skins
+     */
     int valPoint;
 
-    /** The amount of radiant points the user has */
+    /**
+     * The amount of radiant points the user has, radPoint is used to upgrade skins
+     */
     int radPoint;
 
     /** The inventory of skins the user has */
@@ -34,7 +39,8 @@ public class Inventory {
      * 
      * @param valPoint   the amount of valorant points the user has
      * @param radPoint   the amount of radiant points the user has
-     * @param ownedSkins the skins the user ownS
+     * @param ownedSkins the skins the user owns
+     * 
      */
     public Inventory(int valPoint, int radPoint, ArrayList<Skin> ownedSkins) {
         if (valPoint >= 0) {
@@ -73,8 +79,63 @@ public class Inventory {
         return this.radPoint;
     }
 
+    /**
+     * return the array of owned skin
+     * 
+     * @return
+     */
     public ArrayList<Skin> getOwnedSkin() {
         return this.ownedSkins;
+    }
+
+    /**
+     * return the skin in a specific index in the inventory
+     * 
+     * @param index
+     * @return
+     */
+    public Skin getOwnedSkin(int index) {
+        return this.ownedSkins.get(index);
+    }
+
+    // setters
+
+    /**
+     * 
+     * @param valPoint
+     */
+    public void setValPoint(int valPoint) {
+        if (valPoint >= 0) {
+            this.valPoint = valPoint;
+        }
+    }
+
+    /**
+     * 
+     * @param radPoint
+     */
+    public void setRadPoint(int radPoint) {
+        if (radPoint >= 0) {
+            this.radPoint = radPoint;
+        }
+    }
+
+    /**
+     * adds new skins
+     * 
+     * @param skinList the list of skins with the new skin
+     */
+    public void addSkin(ArrayList<Skin> skinList) {
+        this.ownedSkins = skinList;
+    }
+
+    /**
+     * removes the skin from this inventory
+     * 
+     * @param skin the skin to be removed
+     */
+    public void removeSkin(Skin skin) {
+        this.ownedSkins.remove(skin);
     }
 
 }
