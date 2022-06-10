@@ -1,7 +1,8 @@
 /**
- * Names: Bonny Chen
- * Date: May 2nd, 2022
+ * Names: Yifei Qi, Bonny Chen
+ * Date: May.2th, 2022
  * Description: This program will initilzie the five gamemode in valorant (Unrated, Competitive, Spike rush, DeathMatch, Shooting test)
+ * 
  */
 
 import java.util.*;
@@ -20,44 +21,42 @@ public class GameModeMain {
         return gameModeList;
 
     }
-    
-    // This demonstrates how GameMode relates to Ability and Gun and how Ability relates to GameMode and Agent
+
     public static void main(String[] args) throws IOException {
 
-        // Initalized GameModes
+        // initalized GameModes
         GameMode[] gameModeList = GameModeMain.initialGameModes();
         String s = gameModeList[(int) Math.floor(Math.random() * 5)].getName();
-        boolean canUse;
+        boolean canUse = true;
         System.out.println("The gamemode is " + s);
         
-        // If the game mode is deathmatch is selected
         if (s.equals("DeathMatch")) {
 
             canUse = false;
-            Ability.disableAbilities(); // disable the abilities to buy
+            Ability.disableAbilities();
             System.out.println("Abilities are disabled.");
 
         }
-    
-        // If the game mode spike rush is selected
+
         if (s.equals("SpikeRush")) {
 
             Gun[] initalGuns = GunMain.initalGuns();
             for (int i = 0; i < initalGuns.length; i++) {
 
-                initalGuns[i].disableBuy(); // disable the guns to buy
+                initalGuns[i].disableBuy();
 
             }
 
             System.out.println("You cannot purchase a gun.");
 
         }
-        
+
         // Initialize 2 agents
         Agent viper = AgentMain.Viper();
         Agent sage = AgentMain.Sage();
 
-        sage.useHealOrb(viper, canUse);
+        viper.getSingleAbility(viper).useSnakeBite(sage, true);
+        System.out.println("Sage has " + sage.getAgentHp() + "HP");
 
     }
 
