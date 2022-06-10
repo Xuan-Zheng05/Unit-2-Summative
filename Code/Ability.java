@@ -250,7 +250,7 @@ public class Ability {
 	}
 
 	/**
-	 * Method to use sage heal orb
+	 * Method for an agent to receive a heal orb
 	 * 
 	 * @param a: the agent getting healed
 	 */
