@@ -57,7 +57,7 @@ public class GameModeMain {
         Agent viper = AgentMain.Viper();
         Agent sage = AgentMain.Sage();
 
-        sage.getSingleAbility().useHealOrb(viper, canUse);
+        sage.useHealOrb(viper, canUse);
 
     }
 
